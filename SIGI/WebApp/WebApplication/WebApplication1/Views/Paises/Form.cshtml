@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" charset="utf-8"/>
+    <title>Cadastro De Pais</title>
+</head>
+<body>
+    <form action="~/Views/Paises/Index.cshtml" method="post">
+
+
+        <label for="nome">Nome:</label>
+        <input id="nome" name="paises.Nome" value="@ViewBag.paises.Nome" class="form-control" />
+        @Html.ValidationMessage("paises.Nome")
+
+        <input type="submit" value="Cadastrar" />
+
+    </form>
+    
+</body>
+</html>

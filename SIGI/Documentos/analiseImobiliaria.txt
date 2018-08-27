@@ -1,0 +1,415 @@
+Overview do dono da imobiliaria
+	Vencimentos nos próximo 15 dias
+	Contas a pagar
+		Quantidade de títulos
+		Valor
+	Contas a receber
+		Quantidade de títulos
+		Valor
+	Grafico de vencimentos mensais
+		Linha de contas a pagar
+		Linha de contas a receber
+
+
+Cadastro de pessoa
+	Tipo de pessoa 
+		Fiador-Colaborador
+		Locatario - (Dono do imóvel) - Fornecedor
+		Locador,Inquilino - Cliente
+		Imobiliria - Cliente/Fornecedor
+	Tipo ( Física(CPF), Juridica(CNPJ) )
+	CPF/CNPJ
+	Nome
+	    Fantasia
+	    Completo
+	Atividade
+	Profissão
+	Estado Civíl
+		Casado
+			Regime de Casamento
+	Nacionalidade
+	Pai
+	Mae
+	Inscrição
+		Inscrição Municipal
+		Inscrição Estadual
+	Local
+	Data de Nascimento
+	E-mail Principal
+	E-mail Secundario
+	Web Site
+	Senha para acesso Web
+	Tags
+	Obs
+	Pais ( PAISES )
+	Estado ( ESTADOS )
+	Cidade (CIDADES)
+	CEP
+		( LOGRADOUROS, CIDADE, CEP, Bairro, Rua e tipo de logradouro (Rua, Vilarejo, ) )
+	Bairro, 
+	Rua, 
+	Tipo, 
+	Complemento
+	Número
+	Endereço
+		Pessoal
+			CEP
+				( LOGRADOUROS, CIDADE, CEP, Bairro, Rua e 					tipo de logradouro (Rua, Vilarejo, ) )
+			Bairro, 
+			Rua, 
+			Tipo, 
+			Cidade
+			Estado
+			Complemento
+			Número
+			Telefone
+				Fixo
+				Celular
+					Operadora
+			
+		Comercial
+			CEP
+				( LOGRADOUROS, CIDADE, CEP, Bairro, Rua e 					tipo de logradouro (Rua, Vilarejo, ) )
+
+			Empresa
+			Endereço
+			Bairro
+			Cidade
+			Estado
+			Telefone
+	
+Cadastro de atendimento
+	Cliente/pessoa
+	E-mail
+	Celular
+	Telefone Fixo
+	CPF
+	Comentarios Iniciais
+	Entrada
+		Recepção
+		Telefone
+		E-mail
+	Midia	
+	Data de Cadastro 
+	Data da visita		
+	Pretenção
+		Comprar 
+		Alugar
+		Locar
+		Vender
+	Corretor da vez
+	
+Caracteristica (Classe)
+	Nome
+	TipoCampo ( Logico, Numerico, Texto ) 
+
+Cadastro de imóveis
+	Código 
+	Descrição
+	Descrição Detalhada ( CAsa com duas garagens de 20m² )
+	Negócio(Venda, Locação)
+	Tipo do imóvel (Apartamento, Casa, Terreno)
+	Finalidade (Comercial, Residencial, Rural)
+	Pais ( PAISES )
+	Estado ( ESTADOS )
+	Cidade (CIDADES)
+	CEP
+		( LOGRADOUROS, CIDADE, CEP, Bairro, Rua e tipo de logradouro (Rua, Vilarejo, ) )
+	Bairro, 
+	Rua, 
+	Tipo, 
+	Complemento
+	Número
+	Endereço	
+	Empreendimento
+	Locatarios/Responsavel/Dono/
+		Pessoa
+	Códigos de integração
+		Tipo (Nome do site, Nome do sistema)
+		Código
+	Metragem útil;
+	MEtragem Total;
+	CaracteristicaImoveis
+		Imóvel
+		Caracteristica
+		ValorInformado
+
+	Caracteristicas
+		Principais
+			Dormitórios
+			Banheiros
+			Garagens
+			Ano e/ou Entrega da Obra
+			Churrasqueira Privada
+			Fase da Obra
+			Área Total
+			Área Útil
+			Área do Terreno
+			Andar
+			Piscina
+		Geral
+			Varanda
+			Cozinha
+			Suite Tipo
+			Salas
+			Sacada Fechada
+			Niveis
+			Sol
+			Elevadores
+			Muro
+			Portão
+			Cobretura
+			Terraço
+			Salão De Festa
+			Lavabo
+			Dep.Empregada
+			Living
+			Deposito
+			Em Condominio
+			Alarme
+			Móveis Embutidos
+			Fechadura Eletrônica
+			Preparação Para Split
+			Bicicletário
+			Quadra Poliesportiva
+			PlayGround
+			Guarita
+			Cerca Elétrica
+			Fitness
+			Bosque
+			CFTV
+			Churrasqueira Social
+			Sauna
+			MassaCorrida
+			Sala De Jogos
+			Aquecimento
+			Piso
+			Mobiliado
+			Aspécto
+			Posição
+			Pavimento
+			Pintura
+			Nivel da Rua
+			Topografia
+			Decorado
+			Unidades Por Andar
+			Closet
+			Frentes 
+			Fundos
+	Valores
+		Valor de Venda
+		IPTU
+		Aceita Permuta
+		Aceita Financiameto
+		Escriturado
+		Averbado
+		Valor de Locação
+		Condominio
+		Financiado
+		Saldo Devedor
+		Nº de Parcelas Restantes
+	Possivel Cadastro De imagens
+		Foto
+		Descrição
+		Codigo
+	Documentos
+		Cartas e Contratos
+		Gestão de Documentos
+	Detalhes
+		Chaveiro
+		Numero de Chaves
+		Nº da Matricula
+		Copia da Matricula
+		Nº Registro
+		Nº da Chave
+		Local da Chave
+		Nº Habite-se
+		Síndico
+		Zelador
+		OBS
+		Placa
+			Permite 
+			Com 
+			Tipo
+		Garagem Nº
+		Deposito Nº
+		Copia IPTU
+		Nº Cadastro IPTU
+		Nº UC
+		Nº CDC
+		Adm Condomínio
+		Fase da Obra
+		Ocupado
+		Ocupação
+		Documentação
+	Anexos
+		Adição
+		Descrição
+		Arquivo
+		Criação		
+		Editado		
+	CRM
+		Nova Postagem
+		Para
+		Relacionado com...
+	
+
+Cadastro do contrato (Venda)
+	Tipo do contrato
+		Locação, Venda
+
+	Só mostrar quando locação;
+		CobrarIPTU
+		CobrarCondominio
+		CobrarLuz
+		CobrarAgua
+
+	Imovel
+	CobrarTaxaCancelamento
+		Sim
+			Valor
+
+		Não
+	Valor
+	PercentualImobiliaria;
+	Modelo de contrato(Buscar do cadastro)
+		Depois de selecionado Preencher o texto para permitir que sejam realizadas alterações contratuais extraordinárias;
+	Frequencia(Mensal, Semanal, Anual)
+
+	Lançamentos Financeiros
+		
+		Contas a receber do Inquilino;
+		Contas a pagar para o Dono(Locatario)
+	
+	Tipo:Receber
+	PEssoa: Inquilino 001
+	Nr:ALG001
+	Histórico: Cobrança alugel mês 8
+	Data: 01/08/2018
+	Valor: 1250,00
+		Parcelas
+			1250,00
+	LancamentosCategoria
+		Cobranca aluguéis: 1250,00
+	
+
+	Tipo:Pagar
+	Nr:ALG001
+	Histórico: Cobrança alugel mês 8
+	DAta: 01/08/2018
+	Valor: 1250,00
+	ValorLiquido : 1000,00
+		Parcelas
+			1000,00
+	LancamentosCategoria
+		LAnçamento1
+			Documento
+			Natureza: D
+			Valor: 1250
+			CAtegoria: Cobrança alugueis
+		LAnçamento2
+			Natureza: C
+			Valor: 250
+			Categoria: Receita com comissão de aluguel
+
+
+	
+		
+	
+
+
+Exemplo 1 - 
+	1500 reais recebido do inquilino
+		(Vencimento)
+		1100 despesa  (Crédito)
+		400 receita
+	1100 reais pagos para o Dono
+		1100 despesa (Débito)
+
+
+	Documento financeiro
+		TIPODOCUMENTO
+			Pagar
+			Receber
+		NúmeroDocumento - ( VND001-VELHA ) 
+		Histórico - Venda de imóvel com 10 %  
+		Data de emissão: 17/08/2018
+		Valor: 30.000
+		Parcelas
+			
+			15.000 ( 20/09/2018 ) Nr: 915
+			15.000
+
+		LancamentosCategoria
+			Documento
+			Natureza
+				D|C
+			Categoria ( Repasse de comissão, Receita com locação, Receita com vendas,  )
+				
+			
+
+Tesouraria
+	NR: 1
+	Conta: 
+		Itau, Caixa Físico
+	TipoBaixa
+		Pagamento,Recebimento
+	Valor
+		Baixa
+			Parcela 
+				915
+			Valor: 
+				15.000
+			Multa: 
+				50,00
+			LancamentosCategoria
+				Baixa
+				Documento
+				Parcela
+				Categoria ( Multa )
+				Natureza: D|C
+				Valor: 50 
+			
+				
+				
+Parametros
+	CategoeiaMulta
+		Categoria : Multa
+	CategoriaCancelamento
+		Categoria: Cancelamento
+	CategoriaCobrançaInquilino
+		Categoria: 
+		
+
+		
+
+
+Modelos de contrato
+	(Utilizar 
+	Texto padrão (HTML)
+		Nos moldes da legislação atual, a imobiliará @NOMEIMOBILIARIA é responsável por realizar a transferência do valor de @VALOR para a conta corrente do @LOCADOR;
+	@LOCATORIO
+	@ENDEREÇO
+	@VALOR
+	@PERCENTUAL
+
+
+Cadastro De Visitas:Imóvel
+	Data de Cadastro
+	Data da Visita
+	Corretor
+	Cliente
+	Solicitante
+	OBS
+	Retorno
+
+Cadastro de Proposta:Imóvel
+	Numero
+	Data
+	Corretor
+	Cliente
+	Situaçao;
+
+
+
+
