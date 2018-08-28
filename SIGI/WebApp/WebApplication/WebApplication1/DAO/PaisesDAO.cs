@@ -21,10 +21,14 @@ namespace SIGI.DAO
 
         public IList<Paises> Listar()
         {
+            IList<Paises> paises = new List<Paises>();
+
             using (var context = new SIGIContext())
             {
-                return context.Paises.ToList();
+                paises = context.Paises.ToList();
             }
+
+            return paises;
         }
 
         public Paises BuscarPorId (int Id)
@@ -32,6 +36,15 @@ namespace SIGI.DAO
             using (var context = new SIGIContext())
             {
                 return context.Paises.Find(Id);
+
+            }
+        }
+
+        public Paises BuscaUltimo()
+        {
+            using (var context = new SIGIContext())
+            {
+                return context.Paises.Last();
 
             }
         }

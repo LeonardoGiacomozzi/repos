@@ -293,6 +293,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Paises\Index.cshtml" />
     <Content Include="Views\Paises\Form.cshtml" />
+    <Content Include="Views\Paises\Selecionar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

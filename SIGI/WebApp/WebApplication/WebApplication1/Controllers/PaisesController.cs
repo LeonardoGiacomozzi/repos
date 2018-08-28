@@ -14,7 +14,7 @@ namespace SIGI.Controllers
         public ActionResult Index()
         {
             PaisesDAO dao = new PaisesDAO();
-            IList<Paises> Paises = dao.Listar(); 
+            IList<Paises> Paises = dao.Listar();
             ViewBag.paises= Paises;
             return View();
         }
@@ -23,6 +23,43 @@ namespace SIGI.Controllers
         {
             
             return View();
+        }
+
+        public ActionResult Adiciona (string nome)
+        {
+           
+                PaisesDAO dao = new PaisesDAO();
+                Paises pais = new Paises();
+                pais.Nome = nome;
+                int id= dao.BuscaUltimo().Id;
+                pais.Id = id + 1;
+                dao.Adiciona(pais);
+           
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Remover(int id)
+        {
+           PaisesDAO dao = new PaisesDAO();
+           dao.Deletar(id);
+           return RedirectToAction("Index");
+        }
+
+        public ActionResult Selecionar()
+        {
+            PaisesDAO dao = new PaisesDAO();
+            IList<Paises> pais = dao.Listar();
+            ViewBag.paises = pais;
+            return View();
+        }
+
+        public ActionResult Alterar(int id ,string nome)
+        {
+            PaisesDAO dao = new PaisesDAO();
+            Paises pais = dao.BuscarPorId(id);
+            pais.Nome = nome;
+            dao.Alterar(pais);
+            return RedirectToAction("Index");
         }
     }
 }

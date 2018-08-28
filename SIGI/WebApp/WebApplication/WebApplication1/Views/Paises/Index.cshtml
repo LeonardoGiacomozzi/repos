@@ -12,7 +12,7 @@
 </head>
 <body>
     <h1>Lista de paises</h1>
-    <table class="table table-hover">
+    <table>
         <thead>
             <tr>
                 <th>Id</th>
@@ -20,15 +20,17 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in ViewBag.paises)
+            @foreach (var pais in ViewBag.paises)
             {
                 <tr>
-                    <td>@item.Id</td>
-                    <td>@item.Nome</td>
+                    <td class="pais@(pais.Id)">@pais.Id</td>
+                    <td class="pais@(pais.Id)">@pais.Nome</td>
+                    
                 </tr>
             }
         </tbody>
     </table>
+    
 </body>
 
 </html>
