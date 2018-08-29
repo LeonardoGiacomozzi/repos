@@ -31,8 +31,6 @@ namespace SIGI.Controllers
                 PaisesDAO dao = new PaisesDAO();
                 Paises pais = new Paises();
                 pais.Nome = nome;
-                int id= dao.BuscaUltimo().Id;
-                pais.Id = id + 1;
                 dao.Adiciona(pais);
            
             return RedirectToAction("Index");

@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +31,7 @@ namespace SIGI.DAO
             return paises;
         }
 
-        public Paises BuscarPorId (int Id)
+        public Paises BuscarPorId(int Id)
         {
             using (var context = new SIGIContext())
             {
@@ -51,11 +51,20 @@ namespace SIGI.DAO
 
         public void Alterar(Paises pais)
         {
-            using (var context = new SIGIContext()) 
+            //using (var context = new SIGIContext())
+            //{
+            //    context.Entry(pais).State = EntityState.Modified;
+            //    context.SaveChanges();
+            //}
+
+            using (var context = new SIGIContext())
             {
-                context.Entry(pais).State = EntityState.Modified;
+                Paises paisDoBanco = context.Paises.FirstOrDefault(p => p.Id == pais.Id);
+                paisDoBanco.Nome = pais.Nome;
                 context.SaveChanges();
             }
+
+
         }
 
         public void Deletar(int id)

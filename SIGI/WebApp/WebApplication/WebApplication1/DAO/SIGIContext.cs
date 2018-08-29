@@ -1,19 +1,19 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using SIGI.Models.CadastroEndereco;
+using System.Data.Entity;
 
 namespace SIGI.DAO
 {
     public class SIGIContext : DbContext
     {
+        //passo a string connection por contrutor para o  super
+        public SIGIContext() : base(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SIGIDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")
+        {
+        }
         public DbSet<Paises> Paises { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=SIGIDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-        }
     }
 }

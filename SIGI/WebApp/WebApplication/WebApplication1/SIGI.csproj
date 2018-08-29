@@ -46,19 +46,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.EntityFrameworkCore, Version=2.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.EntityFrameworkCore.2.1.2\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.EntityFrameworkCore.Abstractions, Version=2.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Abstractions.2.1.2\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.EntityFrameworkCore.Relational, Version=2.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Relational.2.1.2\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Relational.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.EntityFrameworkCore.SqlServer, Version=2.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.EntityFrameworkCore.SqlServer.2.1.2\lib\netstandard2.0\Microsoft.EntityFrameworkCore.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.2.1.1\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
     </Reference>
@@ -224,6 +218,11 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PaisesController.cs" />
     <Compile Include="DAO\PaisesDAO.cs" />
+    <Compile Include="Migrations\201808291440321_Criando Tabelas.cs" />
+    <Compile Include="Migrations\201808291440321_Criando Tabelas.Designer.cs">
+      <DependentUpon>201808291440321_Criando Tabelas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CadastroEndereco\Paises.cs" />
     <Compile Include="DAO\SIGIContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -310,6 +309,11 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201808291440321_Criando Tabelas.resx">
+      <DependentUpon>201808291440321_Criando Tabelas.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
