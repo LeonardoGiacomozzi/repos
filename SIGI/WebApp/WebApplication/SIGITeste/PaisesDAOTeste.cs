@@ -10,7 +10,7 @@ namespace SIGITeste
     public class PaisesDAOTeste
     {
 
-        public Paises Pais = new Paises();
+        public Pais Pais = new Pais();
 
         
     }

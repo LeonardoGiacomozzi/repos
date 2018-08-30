@@ -1,55 +1,53 @@
-﻿
+﻿using SIGI.Models.CadastroEndereco;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using SIGI.Models.CadastroEndereco;
 
 namespace SIGI.DAO
 {
-    public class PaisDAO
+    public class EstadoDAO
     {
-
-        public void Adiciona(Pais pais)
+        public void Adiciona(Estado Estado)
         {
             using (var context = new SIGIContext())
             {
-                context.Pais.Add(pais);
+                context.Estado.Add(Estado);
                 context.SaveChanges();
             }
         }
 
-        public IList<Pais> Listar()
+        public IList<Estado> Listar()
         {
-            IList<Pais> paises = new List<Pais>();
+
 
             using (var context = new SIGIContext())
             {
-                paises = context.Pais.ToList();
+                return context.Estado.ToList();
             }
 
-            return paises;
+
         }
 
-        public Pais BuscarPorId(int Id)
+        public Estado BuscarPorId(int Id)
         {
             using (var context = new SIGIContext())
             {
-                return context.Pais.Find(Id);
-
-            }
-        }
-
-        public Pais BuscaUltimo()
-        {
-            using (var context = new SIGIContext())
-            {
-                return context.Pais.Last();
+                return context.Estado.Find(Id);
 
             }
         }
 
-        public void Alterar(Pais pais)
+        public Estado BuscaUltimo()
+        {
+            using (var context = new SIGIContext())
+            {
+                return context.Estado.Last();
+
+            }
+        }
+
+        public void Alterar(Estado Estado)
         {
             //using (var context = new SIGIContext())
             //{
@@ -59,8 +57,9 @@ namespace SIGI.DAO
 
             using (var context = new SIGIContext())
             {
-                Pais paisDoBanco = context.Pais.FirstOrDefault(p => p.Id == pais.Id);
-                paisDoBanco.Nome = pais.Nome;
+                Estado estadoDoBanco = context.Estado.FirstOrDefault(e => e.Id == Estado.Id);
+                estadoDoBanco.Nome = Estado.Nome;
+                estadoDoBanco.Pais = Estado.Pais;
                 context.SaveChanges();
             }
 
@@ -71,11 +70,12 @@ namespace SIGI.DAO
         {
             using (var context = new SIGIContext())
             {
-                var pais = context.Pais.Find(id);
-                context.Pais.Remove(pais);
+                var estado = context.Estado.Find(id);
+                context.Estado.Remove(estado);
                 context.SaveChanges();
 
             }
+
         }
     }
 }

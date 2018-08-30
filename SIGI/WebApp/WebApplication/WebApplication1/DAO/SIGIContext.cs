@@ -13,7 +13,9 @@ namespace SIGI.DAO
         public SIGIContext() : base(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SIGIDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")
         {
         }
-        public DbSet<Paises> Paises { get; set; }
+        public DbSet<Pais> Pais { get; set; }
+
+        public DbSet<Estado> Estado { get; set; }
 
     }
 }

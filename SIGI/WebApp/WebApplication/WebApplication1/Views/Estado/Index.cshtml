@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h1>Lista de paises</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var estado in ViewBag.estados)
+                {
+                <tr>
+                    <td class="estado@(estado.Id)">@estado.Id</td>
+                    <td class="estado@(estado.Id)">@estado.Nome</td>
+                    <td class="estado@(estado.Id)">@estado.Pais.Nome</td>
+
+                </tr>
+                }
+            </tbody>
+    </div>
+</body>
+</html>

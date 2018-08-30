@@ -1,6 +1,6 @@
 ﻿namespace SIGI.Models.CadastroEndereco
 {
-    public class Paises
+    public class Pais
     {
         public int Id { get;  set; }
 
