@@ -1,0 +1,37 @@
+﻿
+@{
+
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" charset="utf-8" />
+    <title>Cadastro De Pais</title>
+</head>
+<body>
+    <form action="/Estado/Adiciona" method="post">
+
+        <label for="nome">Nome:</label>
+        <input id="nome" name="nome" />
+        <select name="id">
+
+            @foreach (var item in ViewBag.paises)
+            {
+
+                <option value="@item.Id">
+                    @item.Nome
+                </option>
+
+            }
+            </select>
+
+
+            <input type="submit" value="Cadastrar" />
+
+    </form>
+
+</body>
+</html>

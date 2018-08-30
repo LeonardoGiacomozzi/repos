@@ -51,11 +51,7 @@ namespace SIGI.DAO
 
         public void Alterar(Pais pais)
         {
-            //using (var context = new SIGIContext())
-            //{
-            //    context.Entry(pais).State = EntityState.Modified;
-            //    context.SaveChanges();
-            //}
+            
 
             using (var context = new SIGIContext())
             {

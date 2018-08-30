@@ -220,13 +220,9 @@
     <Compile Include="Controllers\PaisesController.cs" />
     <Compile Include="DAO\EstadoDAO.cs" />
     <Compile Include="DAO\PaisesDAO.cs" />
-    <Compile Include="Migrations\201808291440321_Criando Tabelas.cs" />
-    <Compile Include="Migrations\201808291440321_Criando Tabelas.Designer.cs">
-      <DependentUpon>201808291440321_Criando Tabelas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808291623099_CriandoTabela.cs" />
-    <Compile Include="Migrations\201808291623099_CriandoTabela.Designer.cs">
-      <DependentUpon>201808291623099_CriandoTabela.cs</DependentUpon>
+    <Compile Include="Migrations\201808301324463_FirstMigration.cs" />
+    <Compile Include="Migrations\201808301324463_FirstMigration.Designer.cs">
+      <DependentUpon>201808301324463_FirstMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CadastroEndereco\Estado.cs" />
@@ -301,6 +297,7 @@
     <Content Include="Views\Paises\Form.cshtml" />
     <Content Include="Views\Paises\Selecionar.cshtml" />
     <Content Include="Views\Estado\Index.cshtml" />
+    <Content Include="Views\Estado\Form.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -319,11 +316,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201808291440321_Criando Tabelas.resx">
-      <DependentUpon>201808291440321_Criando Tabelas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808291623099_CriandoTabela.resx">
-      <DependentUpon>201808291623099_CriandoTabela.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808301324463_FirstMigration.resx">
+      <DependentUpon>201808301324463_FirstMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

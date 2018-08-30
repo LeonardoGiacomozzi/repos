@@ -23,6 +23,7 @@ namespace SIGI.DAO
 
             using (var context = new SIGIContext())
             {
+                
                 return context.Estado.ToList();
             }
 
