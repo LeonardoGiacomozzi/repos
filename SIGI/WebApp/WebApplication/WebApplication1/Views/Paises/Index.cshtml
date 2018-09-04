@@ -1,37 +1,72 @@
 ﻿
 @{
-    Layout = null;
+    ViewBag.Title = "Index";
 }
 
-<!DOCTYPE html>
+<link href="~/content/MeuCss.css" rel="stylesheet" type="text/css" >
+<div class="row">
+    <div class="col-md-2">
+        <!-- BEGIN SAMPLE TABLE PORTLET-->
+        <div class="portlet box red">
+            <div class="portlet-title">
+                <div class="caption">
+                    <div class="portlet-body">
+                        <i class="fa fa-cogs"></i> Lista de paises
+                        <div class="table-scrollable">
+                            <table class="table table-hover">
+                                <thead class="tableFont">
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Nome</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="tableFont">
+                                    @foreach (var pais in ViewBag.paises)
+                                    {
+                                        <tr>
+                                            <td class="pais@(pais.Id)">@pais.Id</td>
+                                            <td class="pais@(pais.Id)">@pais.Nome</td>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" charset="utf-8" />
-    <title>Cadastro De Pais</title>
-</head>
-<body>
-    <h1>Lista de paises</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nome</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var pais in ViewBag.paises)
-            {
-                <tr>
-                    <td class="pais@(pais.Id)">@pais.Id</td>
-                    <td class="pais@(pais.Id)">@pais.Nome</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+                <div class="portlet box purple">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-gift"></i>Cadastro de Pais
+                        </div>
+                    </div>
+                    <div class="portlet-body form">
+                  
+                        <form action="/Paises/Adiciona" method="post">
+                            <div class="form-actions top right">
+                                <button type="submit" class="btn green">Submit</button>
+                            </div>
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label class="control-label">Nome</label>
+                                    <input type="text" name="pais.Nome" class="form-control" placeholder="nome de um pais novo">
+                                </div>
+                            </div>
+                            <div class="form-actions right">
+                                <button type="submit" class="btn green">Submit</button>
+                                <button type="button" class="btn default">Cancel</button>
+                            </div>
+                        </form>
                     
-                </tr>
-            }
-        </tbody>
-    </table>
-    
-</body>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-</html>
 
