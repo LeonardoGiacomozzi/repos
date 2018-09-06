@@ -12,9 +12,12 @@ namespace SIGI.Testes
         [TestMethod]
         public void InserirBrasilSantaCatarinaBlumenauBairoVelhaCentral()
         {
-            Pais pais = new Pais();
-            pais.Nome = "Brasil";
             PaisDAO paisDAO = new PaisDAO();
+            var aaaa = paisDAO.Listar();
+
+            Pais pais = new Pais();
+            pais.Nome = "Brasil 2";
+            
             paisDAO.Adiciona(pais);
 
             Estado estado = new Estado();

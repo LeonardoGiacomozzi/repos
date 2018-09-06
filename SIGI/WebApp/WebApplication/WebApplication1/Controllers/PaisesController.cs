@@ -25,13 +25,11 @@ namespace SIGI.Controllers
             return View();
         }
 
-        public ActionResult Adiciona (string nome)
+        public ActionResult Adiciona (Pais pais)
         {
            
                 PaisDAO dao = new PaisDAO();
-                Pais pais = new Pais();
-                pais.Nome = nome;
-                dao.Adiciona(pais);
+                 dao.Adiciona(pais);
            
             return RedirectToAction("Index");
         }
