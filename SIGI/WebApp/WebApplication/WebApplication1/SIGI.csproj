@@ -56,6 +56,10 @@
     <Compile Include="Controllers\PaisesController.cs" />
     <Compile Include="DAO\EstadoDAO.cs" />
     <Compile Include="DAO\PaisesDAO.cs" />
+    <Compile Include="Migrations\201809061436487_Inicial.cs" />
+    <Compile Include="Migrations\201809061436487_Inicial.Designer.cs">
+      <DependentUpon>201809061436487_Inicial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CadastroEndereco\Estado.cs" />
     <Compile Include="Models\CadastroEndereco\Paises.cs" />
@@ -833,6 +837,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\WebGrease.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201809061436487_Inicial.resx">
+      <DependentUpon>201809061436487_Inicial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

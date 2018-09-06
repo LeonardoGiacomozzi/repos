@@ -7,7 +7,7 @@ namespace SIGI.Models.CadastroEndereco
 {
     public class Estado
     {
-
+     
         public Pais Pais{ get; set; }
 
         public int Id { get; set; }
