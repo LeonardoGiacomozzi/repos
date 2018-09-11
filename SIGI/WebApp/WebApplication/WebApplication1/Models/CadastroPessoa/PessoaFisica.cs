@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SIGI.Models.CadastroEndereco;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

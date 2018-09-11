@@ -6,49 +6,49 @@ using System.Web;
 
 namespace SIGI.DAO
 {
-    public class EstadoDAO
+    public class CidadeDAO
     {
-        public void Adiciona(Estado Estado)
+        public void Adiciona(Cidade Cidade)
         {
             using (var context = new SIGIContext())
             {
-                context.Estado.Add(Estado);
+                context.Cidade.Add(Cidade);
                 context.SaveChanges();
             }
         }
 
-        public IList<Estado> Listar()
+        public IList<Cidade> Listar()
         {
 
 
             using (var context = new SIGIContext())
             {
 
-                return context.Estado.ToList();
+                return context.Cidade.ToList();
             }
 
 
         }
 
-        public Estado BuscarPorId(int Id)
+        public Cidade BuscarPorId(int Id)
         {
             using (var context = new SIGIContext())
             {
-                return context.Estado.Find(Id);
+                return context.Cidade.Find(Id);
 
             }
         }
 
-        public Estado BuscaUltimo()
+        public Cidade BuscaUltimo()
         {
             using (var context = new SIGIContext())
             {
-                return context.Estado.Last();
+                return context.Cidade.Last();
 
             }
         }
 
-        public void Alterar(Estado Estado)
+        public void Alterar(Cidade Cidade)
         {
             //using (var context = new SIGIContext())
             //{
@@ -58,9 +58,9 @@ namespace SIGI.DAO
 
             using (var context = new SIGIContext())
             {
-                Estado estadoDoBanco = context.Estado.FirstOrDefault(e => e.Id == Estado.Id);
-                estadoDoBanco.Nome = Estado.Nome;
-                estadoDoBanco.Pais = Estado.Pais;
+                Cidade cidadeDoBanco = context.Cidade.FirstOrDefault(e => e.ID == Cidade.ID);
+                cidadeDoBanco.Nome = Cidade.Nome;
+                cidadeDoBanco.EstadoID= Cidade.EstadoID;
                 context.SaveChanges();
             }
 
@@ -71,8 +71,8 @@ namespace SIGI.DAO
         {
             using (var context = new SIGIContext())
             {
-                var estado = context.Estado.Find(id);
-                context.Estado.Remove(estado);
+                var cidade = context.Cidade.Find(id);
+                context.Cidade.Remove(cidade);
                 context.SaveChanges();
 
             }

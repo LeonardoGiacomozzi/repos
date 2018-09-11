@@ -8,7 +8,7 @@ namespace WebApplication1.Migrations
         public override void Up()
         {
             CreateTable(
-                "dbo.Estados",
+                "dbo.Estadoes",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),

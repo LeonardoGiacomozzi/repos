@@ -25,26 +25,23 @@ namespace SIGI.Controllers
             PaisDAO dao = new PaisDAO();
             IList<Pais> Paises = dao.Listar();
             ViewBag.paises= Paises;
-            return View();
+            return RedirectToAction("Index", "Paises");
         }
 
-        public ActionResult Adiciona(string nome, int id)
+        public ActionResult Adiciona(Estado estado)
         {
-            PaisDAO paisDAO= new PaisDAO();
+            
             EstadoDAO estadoDAO = new EstadoDAO();
-            Estado estado= new Estado();
-            estado.Nome = nome;
-            estado.Pais = paisDAO.BuscarPorId(id);
             estadoDAO.Adiciona(estado);
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Paises");
         }
 
         public ActionResult Remover(int id)
         {
             EstadoDAO dao = new EstadoDAO();
             dao.Deletar(id);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Paises");
         }
 
         public ActionResult Selecionar()
@@ -55,13 +52,13 @@ namespace SIGI.Controllers
             return View();
         }
 
-        public ActionResult Alterar(int id, string nome)
+        public ActionResult Alterar(Estado estado)
         {
             EstadoDAO dao = new EstadoDAO();
-            Estado estado= dao.BuscarPorId(id);
-            estado.Nome = nome;
+            Estado Estado= dao.BuscarPorId(estado.Id);
+            Estado.Nome =(estado.Nome!=null ? estado.Nome : Estado.Nome);
             dao.Alterar(estado);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Paises");
         }
     }
 }

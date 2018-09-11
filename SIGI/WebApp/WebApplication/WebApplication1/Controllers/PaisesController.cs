@@ -13,15 +13,19 @@ namespace SIGI.Controllers
         // GET: Paises
         public ActionResult Index()
         {
-            PaisDAO dao = new PaisDAO();
-            IList<Pais> Paises = dao.Listar();
+            PaisDAO paisDAO  = new PaisDAO();
+            IList<Pais> Paises = paisDAO.Listar();
             ViewBag.paises= Paises;
-            return View();
-        }
 
-        public ActionResult Form()
-        {
-            
+            EstadoDAO estadoDAO= new EstadoDAO();
+            IList<Estado> estado = estadoDAO.Listar();
+            ViewBag.estados = estado;
+
+
+            CidadeDAO cidadeDAO = new CidadeDAO();
+            IList<Cidade> cidades= cidadeDAO.Listar();
+            ViewBag.cidades = cidades;
+
             return View();
         }
 
@@ -41,20 +45,13 @@ namespace SIGI.Controllers
            return RedirectToAction("Index");
         }
 
-        public ActionResult Selecionar()
-        {
-            PaisDAO dao = new PaisDAO();
-            IList<Pais> pais = dao.Listar();
-            ViewBag.paises = pais;
-            return View();
-        }
 
-        public ActionResult Alterar(int id ,string nome)
+        public ActionResult Alterar(Pais pais)
         {
             PaisDAO dao = new PaisDAO();
-            Pais pais = dao.BuscarPorId(id);
-            pais.Nome = nome;
-            dao.Alterar(pais);
+            Pais Pais = dao.BuscarPorId(pais.Id);
+            Pais.Nome = (pais.Nome!=""? pais.Nome:Pais.Nome);
+            dao.Alterar(Pais);
             return RedirectToAction("Index");
         }
     }

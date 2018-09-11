@@ -51,16 +51,27 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CidadeController.cs" />
     <Compile Include="Controllers\EstadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PaisesController.cs" />
+    <Compile Include="DAO\CidadeDAO.cs" />
     <Compile Include="DAO\EstadoDAO.cs" />
     <Compile Include="DAO\PaisesDAO.cs" />
-    <Compile Include="Migrations\201809061436487_Inicial.cs" />
-    <Compile Include="Migrations\201809061436487_Inicial.Designer.cs">
-      <DependentUpon>201809061436487_Inicial.cs</DependentUpon>
+    <Compile Include="Migrations\201809111153207_Inicial.cs" />
+    <Compile Include="Migrations\201809111153207_Inicial.Designer.cs">
+      <DependentUpon>201809111153207_Inicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809111245082_AlteracaoTabelaEstado.cs" />
+    <Compile Include="Migrations\201809111245082_AlteracaoTabelaEstado.Designer.cs">
+      <DependentUpon>201809111245082_AlteracaoTabelaEstado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809111322318_AddCidade.cs" />
+    <Compile Include="Migrations\201809111322318_AddCidade.Designer.cs">
+      <DependentUpon>201809111322318_AddCidade.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\CadastroEndereco\Cidade.cs" />
     <Compile Include="Models\CadastroEndereco\Estado.cs" />
     <Compile Include="Models\CadastroEndereco\Paises.cs" />
     <Compile Include="DAO\SIGIContext.cs" />
@@ -656,6 +667,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Cidade\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -839,8 +851,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201809061436487_Inicial.resx">
-      <DependentUpon>201809061436487_Inicial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201809111153207_Inicial.resx">
+      <DependentUpon>201809111153207_Inicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809111245082_AlteracaoTabelaEstado.resx">
+      <DependentUpon>201809111245082_AlteracaoTabelaEstado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809111322318_AddCidade.resx">
+      <DependentUpon>201809111322318_AddCidade.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

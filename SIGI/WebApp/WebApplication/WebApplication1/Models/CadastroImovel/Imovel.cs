@@ -9,6 +9,7 @@ using WebApplication1.Models.CadastroImovel.Valores;
 using WebApplication1.Models.CadastroImovel;
 using WebApplication1.Models.CadastroImovel.ListaDocumentos;
 using SIGI.Models.CadastroImovel.Caracteristicas;
+using SIGI.Models.CadastroEndereco;
 
 namespace SIGI.Models.CadastroImovel
 {
