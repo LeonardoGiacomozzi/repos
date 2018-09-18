@@ -16,27 +16,24 @@ namespace WebApplication1.Controllers
 
             CidadeDAO cidadeDAO = new CidadeDAO();
             cidadeDAO.Adiciona(cidade);
-
-            return RedirectToAction("Index", "Paises");
+            if (cidade.ID == 0)
+            {
+                cidadeDAO.Adiciona(cidade);
+            }
+            else
+            {
+                Cidade Cidade = cidadeDAO.BuscarPorId(cidade.ID);
+                Cidade.Nome = (cidade.Nome != null ? cidade.Nome : Cidade.Nome);
+                cidadeDAO.Alterar(Cidade);
+            }
+            return RedirectToAction("Index", "Localidade");
         }
 
         public ActionResult Remover(int id)
         {
             CidadeDAO dao = new CidadeDAO();
             dao.Deletar(id);
-            return RedirectToAction("Index", "Paises");
-        }
-
-      
-
-        public ActionResult Alterar(Cidade cidade)
-        {
-            CidadeDAO dao = new CidadeDAO();
-            Cidade Cidade = dao.BuscarPorId(cidade.ID);
-            Cidade.Nome = (cidade.Nome!=null ? cidade.Nome : Cidade.Nome);
-            Cidade.EstadoID = (cidade.EstadoID != 0 ? cidade.EstadoID : Cidade.EstadoID);
-            dao.Alterar(Cidade);
-            return RedirectToAction("Index", "Paises");
+            return RedirectToAction("Index", "Localidade");
         }
     }
 }

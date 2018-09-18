@@ -30,6 +30,21 @@ namespace SIGI.DAO
 
         }
 
+        public IList<Cidade> ListarFullProperties()
+        {
+            var listaEstados = this.Listar();
+            IList<Cidade> result = new List<Cidade>();
+            foreach (var cidade in listaEstados)
+                result.Add(GetFullProperties(cidade));
+            return result;
+        }
+        public Cidade GetFullProperties(Cidade cidade)
+        {
+            cidade.Estado= new EstadoDAO().BuscarPorId(cidade.EstadoID);
+            return cidade;
+        }
+
+
         public Cidade BuscarPorId(int Id)
         {
             using (var context = new SIGIContext())

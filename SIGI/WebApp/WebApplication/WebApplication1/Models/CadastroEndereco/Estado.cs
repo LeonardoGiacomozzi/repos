@@ -13,6 +13,9 @@ namespace SIGI.Models.CadastroEndereco
         public Pais Pais { get; set; }
         public string  Nome { get; set; }
 
-
+        public override string ToString()
+        {
+            return this.Nome;
+        }
     }
 }

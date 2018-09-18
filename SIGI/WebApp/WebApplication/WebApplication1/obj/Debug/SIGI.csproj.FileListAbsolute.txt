@@ -386,3 +386,4 @@ D:\repos\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\WebApplication1.Mi
 D:\repos\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\SIGI.csproj.GenerateResource.cache
 D:\repos\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\WebApplication1.Migrations.AlteracaoTabelaEstado.resources
 D:\repos\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\WebApplication1.Migrations.AddCidade.resources
+D:\repos\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\WebApplication1.Migrations.TabelaDeEnderecos.resources

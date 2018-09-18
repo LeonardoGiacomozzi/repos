@@ -54,8 +54,12 @@
     <Compile Include="Controllers\CidadeController.cs" />
     <Compile Include="Controllers\EstadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LocalidadeController.cs" />
     <Compile Include="Controllers\PaisesController.cs" />
+    <Compile Include="DAO\CadastroImoveis\AnexosDAO.cs" />
+    <Compile Include="DAO\CadastroImoveis\CRMDAO.cs" />
     <Compile Include="DAO\CidadeDAO.cs" />
+    <Compile Include="DAO\EnderecoDAO.cs" />
     <Compile Include="DAO\EstadoDAO.cs" />
     <Compile Include="DAO\PaisesDAO.cs" />
     <Compile Include="Migrations\201809111153207_Inicial.cs" />
@@ -69,6 +73,10 @@
     <Compile Include="Migrations\201809111322318_AddCidade.cs" />
     <Compile Include="Migrations\201809111322318_AddCidade.Designer.cs">
       <DependentUpon>201809111322318_AddCidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809181314284_TabelaDeEnderecos.cs" />
+    <Compile Include="Migrations\201809181314284_TabelaDeEnderecos.Designer.cs">
+      <DependentUpon>201809181314284_TabelaDeEnderecos.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CadastroEndereco\Cidade.cs" />
@@ -541,6 +549,7 @@
     <Content Include="content\global\scripts\datatable.js" />
     <Content Include="content\global\scripts\metronic.js" />
     <Content Include="content\MeuCss.css" />
+    <Content Include="content\scripts\JavaScript.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="content\Site.css" />
@@ -650,11 +659,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Paises\Index.cshtml" />
-    <Content Include="Views\Paises\Form.cshtml" />
-    <Content Include="Views\Paises\Selecionar.cshtml" />
-    <Content Include="Views\Estado\Index.cshtml" />
-    <Content Include="Views\Estado\Form.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
@@ -664,10 +668,13 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Localidade\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Cidade\" />
+    <Folder Include="Views\Estado\" />
+    <Folder Include="Views\Paises\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -859,6 +866,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809111322318_AddCidade.resx">
       <DependentUpon>201809111322318_AddCidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809181314284_TabelaDeEnderecos.resx">
+      <DependentUpon>201809181314284_TabelaDeEnderecos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

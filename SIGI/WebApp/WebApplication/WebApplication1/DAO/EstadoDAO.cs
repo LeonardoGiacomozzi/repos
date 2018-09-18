@@ -29,6 +29,19 @@ namespace SIGI.DAO
 
 
         }
+        public IList<Estado> ListarFullProperties()
+        {
+            var listaEstados = this.Listar();
+            IList<Estado> result = new List<Estado>();
+            foreach (var estado in listaEstados)
+                result.Add(GetFullProperties(estado));
+            return result;
+        }
+        public Estado GetFullProperties(Estado estado)
+        {
+            estado.Pais = new PaisDAO().BuscarPorId(estado.PaisID);
+            return estado;
+        }
 
         public Estado BuscarPorId(int Id)
         {
@@ -60,7 +73,7 @@ namespace SIGI.DAO
             {
                 Estado estadoDoBanco = context.Estado.FirstOrDefault(e => e.Id == Estado.Id);
                 estadoDoBanco.Nome = Estado.Nome;
-                estadoDoBanco.Pais = Estado.Pais;
+                estadoDoBanco.PaisID = Estado.PaisID;
                 context.SaveChanges();
             }
 

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using SIGI.Models.CadastroEndereco;
 using System.Data.Entity;
+using WebApplication1.Models.CadastroImovel;
+using SIGI.Models.CadastroImovel;
 
 namespace SIGI.DAO
 {
@@ -13,10 +15,17 @@ namespace SIGI.DAO
         public SIGIContext() : base(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SIGIDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")
         {
         }
+        //CADASTRO DE ENDEREÇOS
         public DbSet<Pais> Pais { get; set; }
         public DbSet<Cidade> Cidade { get; set; }
 
         public DbSet<Estado> Estado { get; set; }
+        public DbSet<Endereco> Enderecos { get; set; }
+
+        //CADASTRO DE IMÓVEIS
+        public DbSet<Anexo> Anexo{ get; set; }
+        public DbSet<Crm> CRM{ get; set; }
+
 
     }
 }
