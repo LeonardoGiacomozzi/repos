@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<link href="~/content/MeuCss.css" rel="stylesheet" type="text/css">
+<div class="row">
+    <h2>Endereços</h2>
+    <div class="col-md-8">
+        <div class="portlet box red">
+            <div class="portlet-title">
+                <div class="caption" col-md-12>
+                    <i class="fa fa-cogs"></i> Lista de Endereços Cadastrados
+                </div>
+                <div class="actions">
+                    <a href="javascript:;" class="btn btn-default btn-sm" id="botao-add-pais">
+                        <i class="fa fa-plus"></i> Add
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body col-md-12">
+
+                <div class="table-scrollable">
+                    <table id="gridPaises" class="table table-hover">
+                        <thead class="">
+                            <tr>
+                                <th class="col-md-1">#</th>
+                                <th class="col-md-1">Id</th>
+                                <th class="col-md-3 ">Rua</th>
+                                <th class="col-md-1 ">Numero</th>
+                                <th class="col-md-1 ">Bairro</th>
+                                <th class="col-md-1 ">Cidade</th>
+                                <th class="col-md-2">Estado</th>
+                                <th class="col-md-2">Pais</th>
+                                <th class="col-md-2">CEP</th>
+                                <th class="col-md-2 offset-md-2">Complemento</th>
+                                <th class="col-md-1">
+                                    <a></a>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="">
+                            @foreach (var endereco in ViewBag.endereco)
+                            {
+                                <tr data-id="@endereco.ID" data-cep="@endereco.CEP">
+                                    <td class="endereco@(endereco.ID)">
+                                        <a href="@Url.Action("Remover","Paises", new { id = endereco.ID })" class="botao-remove-cidade"><i class="fa fa-minus-circle font-red"></i></a>
+                                    </td>
+                                    <td class="endereco@(endereco.ID)">@endereco.ID</td>
+                                    <td class="endereco@(endereco.ID)">@endereco.Rua</td>
+                                    <td class="endereco@(endereco.ID)">@endereco.Numero</td>
+                                    <td class="endereco@(endereco.ID)">@endereco.Bairro</td>
+                                    <td class="endereco@(endereco.ID)">@endereco.Cidade</td>
+                                    <td class="endereco@(endereco.ID)">@endereco.Estado</td>
+                                    <td class="endereco@(endereco.ID)">@endereco.Pais</td>
+                                    <td class="endereco@(endereco.ID)">@endereco.CEP</td>
+                                    <td class="endereco@(endereco.ID)">@endereco.Complemento</td>
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 " id="alter-localidade">
+        <div class="portlet box purple">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i>Cadastro de Pais
+                </div>
+            </div>
+            <div class="portlet-body form">
+
+                <form id="form-cadastro-pais" action="/Endereco/Insert" method="post">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <input class="id-secreto" style="display:none;" name="pais.Id">
+                            <label class="control-label">Nome</label>
+                            <input type="text" name="pais.Nome" class="form-control nome-alterar" placeholder="nome de um pais novo">
+                        </div>
+                    </div>
+                    <div class="form-actions right">
+                        <button type="submit" class="btn green">Cadastrar</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+

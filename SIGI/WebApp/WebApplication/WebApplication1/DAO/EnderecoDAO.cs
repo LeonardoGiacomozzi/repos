@@ -65,11 +65,6 @@ namespace SIGI.DAO
 
         public void Alterar(Endereco endereco)
         {
-            //using (var context = new SIGIContext())
-            //{
-            //    context.Entry(pais).State = EntityState.Modified;
-            //    context.SaveChanges();
-            //}
 
             using (var context = new SIGIContext())
             {

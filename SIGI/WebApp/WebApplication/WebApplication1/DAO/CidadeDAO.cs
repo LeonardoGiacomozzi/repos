@@ -65,12 +65,6 @@ namespace SIGI.DAO
 
         public void Alterar(Cidade Cidade)
         {
-            //using (var context = new SIGIContext())
-            //{
-            //    context.Entry(pais).State = EntityState.Modified;
-            //    context.SaveChanges();
-            //}
-
             using (var context = new SIGIContext())
             {
                 Cidade cidadeDoBanco = context.Cidade.FirstOrDefault(e => e.ID == Cidade.ID);

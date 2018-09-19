@@ -55,16 +55,12 @@ namespace WebApplication1.DAO.CadastroImoveis
 
             public void Alterar(Crm crm)
             {
-                //using (var context = new SIGIContext())
-                //{
-                //    context.Entry(pais).State = EntityState.Modified;
-                //    context.SaveChanges();
-                //}
+              
 
                 using (var context = new SIGIContext())
                 {
                     Crm crmDoBanco = context.CRM.FirstOrDefault(c => c.ID == crm.ID);
-                    crmDoBanco.Descricao= crm.Descricao;
+                    crmDoBanco.Descricao = crm.Descricao;
 
                     context.SaveChanges();
                 }
@@ -83,4 +79,5 @@ namespace WebApplication1.DAO.CadastroImoveis
                 }
             }
         }
+    }
 }
