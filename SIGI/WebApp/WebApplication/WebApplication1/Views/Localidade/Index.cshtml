@@ -37,14 +37,14 @@
                         <tbody class="">
                             @foreach (var pais in ViewBag.paises)
                             {
-                            <tr data-id="@pais.Id" data-nome="@pais.Nome">
-                                <td class="cidade@(pais.Id)">
-                                    <a href="@Url.Action("Remover","Paises", new { id = pais.Id })" class="botao-remove-cidade"><i class="fa fa-minus-circle font-red"></i></a>
-                                </td>
-                                <td class="pais@(pais.Id)">@pais.Id</td>
-                                <td class="pais@(pais.Id)">@pais.Nome</td>
+                                <tr data-id="@pais.Id" data-nome="@pais.Nome">
+                                    <td class="cidade@(pais.Id)">
+                                        <a href="@Url.Action("Remover","Paises", new { id = pais.Id })" class="botao-remove-cidade"><i class="fa fa-minus-circle font-red"></i></a>
+                                    </td>
+                                    <td class="pais@(pais.Id)">@pais.Id</td>
+                                    <td class="pais@(pais.Id)">@pais.Nome</td>
 
-                            </tr>
+                                </tr>
                             }
                         </tbody>
                     </table>
@@ -52,7 +52,8 @@
             </div>
         </div>
     </div>
-
+</div>
+<div class="row">
     <div class="col-md-4 offset-md-8" id="forms-updates">
         <div class="portlet box purple">
             <div class="portlet-title">
@@ -71,7 +72,7 @@
                         </div>
                     </div>
                     <div class="form-actions right">
-                        <button type="submit" class="btn green">Cadastrar</button>
+                        <button type="submit" class="btn green">Salvar</button>
                     </div>
                 </form>
 
@@ -97,40 +98,41 @@
 
             </div>
             <div class="portlet-body col-md-12">
-                   
-                    <div class="table-scrollable">
-                        <table id="gridEstados" class="table table-hover  ">
-                            <thead class="">
-                                <tr>
-                                    <th class="col-md-1">#</th>
-                                    <th class="col-md-2">Id</th>
-                                    <th class="col-md-12 col-md-offset-8">Estado</th>
-                                    <th class="col-md-12 col-md-offset-5">País</th>
-                                    <th class="col-md-10 col-md-offset-12">
-                                        <a></a>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody class="">
-                                @foreach (var estado in ViewBag.estados)
-                                {
-                                    <tr data-id="@estado.Id" data-nome="@estado.Nome" data-pais="@estado.PaisID" >
-                                        <td class="cidade@(estado.Id)">
-                                            <a href="@Url.Action("Remover","Estado", new { id = estado.Id })" class="botao-remove-cidade"><i class="fa fa-minus-circle font-red"></i></a>
-                                        </td>
-                                        <td  class="estado@(estado.Id)">@estado.Id</td>
-                                        <td class="estado@(estado.Id)">@estado.Nome</td>
-                                        <td class="estado@(estado.Id)">@estado.Pais</td>
 
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="table-scrollable">
+                    <table id="gridEstados" class="table table-hover  ">
+                        <thead class="">
+                            <tr>
+                                <th class="col-md-1">#</th>
+                                <th class="col-md-2">Id</th>
+                                <th class="col-md-12 col-md-offset-8">Estado</th>
+                                <th class="col-md-12 col-md-offset-5">País</th>
+                                <th class="col-md-10 col-md-offset-12">
+                                    <a></a>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="">
+                            @foreach (var estado in ViewBag.estados)
+                            {
+                                <tr data-id="@estado.Id" data-nome="@estado.Nome" data-pais="@estado.PaisID">
+                                    <td class="cidade@(estado.Id)">
+                                        <a href="@Url.Action("Remover","Estado", new { id = estado.Id })" class="botao-remove-cidade"><i class="fa fa-minus-circle font-red"></i></a>
+                                    </td>
+                                    <td class="estado@(estado.Id)">@estado.Id</td>
+                                    <td class="estado@(estado.Id)">@estado.Nome</td>
+                                    <td class="estado@(estado.Id)">@estado.Pais</td>
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
                 </div>
+            </div>
         </div>
     </div>
-
+</div>
+<div class="row">
     <div class="col-md-4 offset-md-8">
         <div class="portlet box purple">
             <div class="portlet-title">
@@ -169,7 +171,7 @@
                             </div>
                         </div>
                         <div class="form-actions right">
-                            <button type="submit" class="btn green">Cadastrar</button>
+                            <button type="submit" class="btn green">Salvar</button>
                         </div>
                     </div>
 
@@ -180,9 +182,9 @@
     </div>
 </div>
 
-<div class="row">
+
     <div class="row">
-         <h2>CIDADE</h2>
+        <h2>CIDADE</h2>
         <div class="col-md-8">
             <!-- BEGIN SAMPLE TABLE PORTLET-->
             <div class="portlet box red">
@@ -257,7 +259,7 @@
                                                 @item.Nome
                                             </option>
 
-                                        }   
+                                        }
 
                                     </select>
 
@@ -270,7 +272,7 @@
                                 </div>
                             </div>
                             <div class="form-actions right">
-                                <button type="submit" class="btn blue">Salvar</button>
+                                <button type="submit" class="btn green">Salvar</button>
                             </div>
                         </div>
 
@@ -280,6 +282,6 @@
             </div>
         </div>
     </div>
-</div>
 
-<script src="~/content/scripts/JavaScript.js" type="text/javascript"></script>
+
+<script src="~/content/scripts/CEP.js" type="text/javascript"></script>

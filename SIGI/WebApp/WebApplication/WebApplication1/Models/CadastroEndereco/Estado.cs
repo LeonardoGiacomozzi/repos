@@ -9,12 +9,10 @@ namespace SIGI.Models.CadastroEndereco
 {
     public class Estado
     {
-        [Key]
-        [Required]
+
         public int Id { get; set; }
         public int PaisID { get; set; }
-        [ForeignKey("PaisID")]
-        [Required]
+      
         public Pais Pais { get; set; }
         public string  Nome { get; set; }
       

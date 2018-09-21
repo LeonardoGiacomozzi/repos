@@ -1,4 +1,4 @@
-namespace WebApplication1.Migrations
+namespace SIGI.Migrations
 {
     using System;
     using System.Data.Entity;

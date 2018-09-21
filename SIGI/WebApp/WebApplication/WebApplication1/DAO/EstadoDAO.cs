@@ -29,6 +29,21 @@ namespace SIGI.DAO
 
 
         }
+
+        public IList<Estado> BuscaPorPais(int PaisID) {
+
+            IList<Estado> estadosBanco = Listar();
+            IList<Estado> estadosRetorno = new List<Estado>();
+            foreach (var estado in estadosBanco)
+            {
+                if (estado.PaisID==PaisID)
+                {
+                    estadosRetorno.Add(estado);
+                }
+            }
+            return estadosRetorno;
+        }
+            
         public IList<Estado> ListarFullProperties()
         {
             var listaEstados = this.Listar();

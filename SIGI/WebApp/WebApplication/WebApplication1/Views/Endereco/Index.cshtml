@@ -15,7 +15,7 @@
                     <i class="fa fa-cogs"></i> Lista de Endereços Cadastrados
                 </div>
                 <div class="actions">
-                    <a href="javascript:;" class="btn btn-default btn-sm" id="botao-add-pais">
+                    <a href="javascript:;" class="btn btn-default btn-sm" id="botao-add-endereco">
                         <i class="fa fa-plus"></i> Add
                     </a>
                 </div>
@@ -23,7 +23,7 @@
             <div class="portlet-body col-md-12">
 
                 <div class="table-scrollable">
-                    <table id="gridPaises" class="table table-hover">
+                    <table id="gridEndereco" class="table table-hover">
                         <thead class="">
                             <tr>
                                 <th class="col-md-1">#</th>
@@ -44,9 +44,11 @@
                         <tbody class="">
                             @foreach (var endereco in ViewBag.endereco)
                             {
-                                <tr data-id="@endereco.ID" data-cep="@endereco.CEP">
+                                <tr data-id="@endereco.ID" data-cep="@endereco.CEP" data-rua="@endereco.Rua"
+                                    data-num="@endereco.Numero" data-bairro="@endereco.Bairro" data-cidade="@endereco.CidadeID"
+                                    data-estado="@endereco.EstadoID" data-pais="@endereco.PaisID" data-complemento="@endereco.Complemento">
                                     <td class="endereco@(endereco.ID)">
-                                        <a href="@Url.Action("Remover","Paises", new { id = endereco.ID })" class="botao-remove-cidade"><i class="fa fa-minus-circle font-red"></i></a>
+                                        <a href="@Url.Action("Remover","Endereco", new { id = endereco.ID })" class="botao-remove-cidade"><i class="fa fa-minus-circle font-red"></i></a>
                                     </td>
                                     <td class="endereco@(endereco.ID)">@endereco.ID</td>
                                     <td class="endereco@(endereco.ID)">@endereco.Rua</td>
@@ -78,16 +80,64 @@
             </div>
             <div class="portlet-body form">
 
-                <form id="form-cadastro-pais" action="/Endereco/Insert" method="post">
+                <form id="form-cadastro-endereco" action="/Endereco/Insert" method="post">
                     <div class="form-body">
                         <div class="form-group">
-                            <input class="id-secreto" style="display:none;" name="pais.Id">
-                            <label class="control-label">Nome</label>
-                            <input type="text" name="pais.Nome" class="form-control nome-alterar" placeholder="nome de um pais novo">
+                            <input class="id-secreto" style="display:none;" name="endereco.ID">
+                            <label class="control-label">Rua</label>
+                            <input type="text" name="endereco.Rua" class="form-control rua-alterar" placeholder="Nome da Rua">
+                            <label class="control-label">Bairro</label>
+                            <input type="text" name="endereco.Bairro" class="form-control bairro-alterar" placeholder="Nome do Bairro">
+                            <label class="control-label">Pais</label>
+                            <select id="endereco-pais-select" name="endereco.PaisID">
+
+                                @foreach (var item in ViewBag.endereco)
+                                {
+
+                                    <option value="@item.PaisID">
+                                        @item.Pais.Nome
+                                    </option>
+
+                                }
+
+                            </select>
+                            <label class="control-label">Estado</label>
+                            <select id="endereco-estado-select" name="endereco.EstadoID">
+
+                                @foreach (var item in ViewBag.endereco)
+                                {
+
+                                    <option value="@item.EstadoID">
+                                        @item.Estado.Nome
+                                    </option>
+
+                                }
+
+                            </select>
+                            <label class="control-label">Cidade</label>
+                            <select id="endereco-cidade-select" name="endereco.CidadeID">
+
+                                @foreach (var item in ViewBag.endereco)
+                                {
+
+                                    <option value="@item.CidadeID">
+                                        @item.Cidade.Nome
+                                    </option>
+
+                                }
+
+                            </select><br>
+                            <label class="control-label">Numero</label>
+                            <input type="text" name="endereco.Numero" class="form-control numero-alterar" placeholder="Nº">
+                            <label class="control-label">CEP</label>
+                            <input type="text" name="endereco.CEP" class="form-control cep-alterar" placeholder="EX 00000-000">
+                            <label class="control-label">Complemento</label>
+                            <input type="text" name="endereco.Complemento" class="form-control complemento-alterar" placeholder="Complemento">
                         </div>
                     </div>
                     <div class="form-actions right">
-                        <button type="submit" class="btn green">Cadastrar</button>
+                        <a href="@Url.Action("Index","Localidade")" class="botao-move-localidade"><i class="fa fa-edit font-red"></i>Cadastrar Localidade</a>
+                        <button type="submit" class="btn green">Salvar</button>
                     </div>
                 </form>
 
@@ -95,5 +145,6 @@
         </div>
     </div>
 </div>
-</div>
 
+
+<script src="~/content/scripts/Endereco.js"></script>

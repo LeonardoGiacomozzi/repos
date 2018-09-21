@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace WebApplication1.DAO.CadastroImoveis
+namespace SIGI.DAO.CadastroImoveis
 {
     public class CRMDAO
     {

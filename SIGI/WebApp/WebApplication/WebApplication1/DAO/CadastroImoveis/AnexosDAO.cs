@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using WebApplication1.Models.CadastroImovel;
+using SIGI.Models.CadastroImovel;
 
-namespace WebApplication1.DAO.CadastroImoveis
+namespace SIGI.DAO.CadastroImoveis
 {
     public class AnexosDAO
     {

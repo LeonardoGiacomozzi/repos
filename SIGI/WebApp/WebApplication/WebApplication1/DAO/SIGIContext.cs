@@ -4,8 +4,9 @@ using System.Linq;
 using System.Web;
 using SIGI.Models.CadastroEndereco;
 using System.Data.Entity;
-using WebApplication1.Models.CadastroImovel;
 using SIGI.Models.CadastroImovel;
+using SIGI.Models.CadastroImovel.ListaDetalhes;
+using SIGI.Models.CadastroImovel.ListaDocumentos;
 
 namespace SIGI.DAO
 {
@@ -25,6 +26,8 @@ namespace SIGI.DAO
         //CADASTRO DE IMÓVEIS
         public DbSet<Anexo> Anexo{ get; set; }
         public DbSet<Crm> CRM{ get; set; }
+        //public DbSet<Detalhes> Detalhes{ get; set; }
+        //public DbSet<Documentos> Documentos { get; set; }
 
 
     }

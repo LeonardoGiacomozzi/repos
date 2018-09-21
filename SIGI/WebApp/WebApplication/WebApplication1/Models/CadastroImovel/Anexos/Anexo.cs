@@ -1,4 +1,4 @@
-﻿namespace WebApplication1.Models.CadastroImovel
+﻿namespace SIGI.Models.CadastroImovel
 {
     public class Anexo
     {

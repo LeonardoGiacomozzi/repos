@@ -14,8 +14,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebApplication1</RootNamespace>
-    <AssemblyName>WebApplication1</AssemblyName>
+    <RootNamespace>SIGI</RootNamespace>
+    <AssemblyName>SIGI</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -59,13 +59,15 @@
     <Compile Include="Controllers\PaisesController.cs" />
     <Compile Include="DAO\CadastroImoveis\AnexosDAO.cs" />
     <Compile Include="DAO\CadastroImoveis\CRMDAO.cs" />
+    <Compile Include="DAO\CadastroImoveis\DetalhesDAO.cs" />
+    <Compile Include="DAO\CadastroImoveis\DocumentosDAO.cs" />
     <Compile Include="DAO\CidadeDAO.cs" />
     <Compile Include="DAO\EnderecoDAO.cs" />
     <Compile Include="DAO\EstadoDAO.cs" />
     <Compile Include="DAO\PaisesDAO.cs" />
-    <Compile Include="Migrations\201809191413083_inicial.cs" />
-    <Compile Include="Migrations\201809191413083_inicial.Designer.cs">
-      <DependentUpon>201809191413083_inicial.cs</DependentUpon>
+    <Compile Include="Migrations\201809211254226_inicial.cs" />
+    <Compile Include="Migrations\201809211254226_inicial.Designer.cs">
+      <DependentUpon>201809211254226_inicial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CadastroEndereco\Cidade.cs" />
@@ -538,7 +540,8 @@
     <Content Include="content\global\scripts\datatable.js" />
     <Content Include="content\global\scripts\metronic.js" />
     <Content Include="content\MeuCss.css" />
-    <Content Include="content\scripts\JavaScript.js" />
+    <Content Include="content\scripts\CEP.js" />
+    <Content Include="content\scripts\Endereco.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="content\Site.css" />
@@ -849,8 +852,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201809191413083_inicial.resx">
-      <DependentUpon>201809191413083_inicial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201809211254226_inicial.resx">
+      <DependentUpon>201809211254226_inicial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

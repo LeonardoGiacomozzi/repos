@@ -1,4 +1,4 @@
-﻿namespace WebApplication1.Models.CadastroImovel.Valores
+﻿namespace SIGI.Models.CadastroImovel.Valores
 {
     public abstract class Valor
     {
