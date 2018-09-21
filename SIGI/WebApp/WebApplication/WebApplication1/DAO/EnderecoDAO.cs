@@ -10,11 +10,8 @@ namespace SIGI.DAO
     {
         public void Adiciona(Endereco endereco)
         {
-  
-         
             using (var context = new SIGIContext())
             {
-
                 context.Enderecos.Add(endereco);
                 context.SaveChanges();
             }
@@ -44,9 +41,7 @@ namespace SIGI.DAO
         {
             endereco.Pais = new PaisDAO().BuscarPorId(endereco.PaisID);
             endereco.Estado = new EstadoDAO().BuscarPorId(endereco.EstadoID);
-            endereco.Estado = new EstadoDAO().GetFullProperties(endereco.Estado);
             endereco.Cidade = new CidadeDAO().BuscarPorId(endereco.CidadeID);
-            endereco.Cidade = new CidadeDAO().GetFullProperties(endereco.Cidade);
             return endereco;
         }
 
@@ -67,25 +62,6 @@ namespace SIGI.DAO
 
             }
         }
-
-        public IList<Estado> BuscaEstadosDoPais(int PaisID) {
-
-            EstadoDAO estadoDAO = new EstadoDAO();
-
-            return estadoDAO.BuscaPorPais(PaisID);
-
-        }
-
-
-        public IList<Cidade> BuscaCidadeDoEstado(int EstadoID)
-        {
-
-            CidadeDAO cidadeDAO = new CidadeDAO();
-
-            return cidadeDAO.BuscaPorEstado(EstadoID);
-
-        }
-
 
         public void Alterar(Endereco endereco)
         {

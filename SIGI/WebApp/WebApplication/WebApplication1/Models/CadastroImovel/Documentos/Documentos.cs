@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SIGI.Models.CadastroImovel.ListaDocumentos
+namespace WebApplication1.Models.CadastroImovel.ListaDocumentos
 {
     public class Documentos
     {

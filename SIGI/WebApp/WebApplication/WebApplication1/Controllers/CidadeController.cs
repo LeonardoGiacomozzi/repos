@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace SIGI.Controllers
+namespace WebApplication1.Controllers
 {
     public class CidadeController : Controller
     {

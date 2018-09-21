@@ -10,7 +10,7 @@ namespace SIGI.Controllers
 {
     public class EnderecoController : Controller
     {
-       
+
         public ActionResult Index()
         {
             EnderecoDAO enderecoDAO = new EnderecoDAO();
@@ -28,7 +28,7 @@ namespace SIGI.Controllers
             }
             else
             {
-               
+
                 dao.Alterar(endereco);
             }
 
@@ -42,6 +42,5 @@ namespace SIGI.Controllers
             dao.Deletar(id);
             return RedirectToAction("Index");
         }
-
     }
 }
