@@ -90,11 +90,11 @@
                             <label class="control-label">Pais</label>
                             <select id="endereco-pais-select" name="endereco.PaisID">
 
-                                @foreach (var item in ViewBag.endereco)
+                                @foreach (var item in ViewBag.paises)
                                 {
 
-                                    <option value="@item.PaisID">
-                                        @item.Pais.Nome
+                                    <option value="@item.Id">
+                                        @item.Nome
                                     </option>
 
                                 }
@@ -103,11 +103,11 @@
                             <label class="control-label">Estado</label>
                             <select id="endereco-estado-select" name="endereco.EstadoID">
 
-                                @foreach (var item in ViewBag.endereco)
+                                @foreach (var item in ViewBag.estados)
                                 {
 
-                                    <option value="@item.EstadoID">
-                                        @item.Estado.Nome
+                                    <option value="@item.Id">
+                                        @item.Nome
                                     </option>
 
                                 }
@@ -116,11 +116,11 @@
                             <label class="control-label">Cidade</label>
                             <select id="endereco-cidade-select" name="endereco.CidadeID">
 
-                                @foreach (var item in ViewBag.endereco)
+                                @foreach (var item in ViewBag.cidades)
                                 {
 
-                                    <option value="@item.CidadeID">
-                                        @item.Cidade.Nome
+                                    <option value="@item.ID">
+                                        @item.Nome
                                     </option>
 
                                 }
@@ -147,3 +147,4 @@
 
 
 
+<script src="~/content/scripts/Endereco.js"></script>

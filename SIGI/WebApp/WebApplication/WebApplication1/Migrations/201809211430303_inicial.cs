@@ -59,6 +59,25 @@ namespace WebApplication1.Migrations
                 .PrimaryKey(t => t.ID);
             
             CreateTable(
+                "dbo.Detalhes",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        Descricao = c.String(),
+                    })
+                .PrimaryKey(t => t.ID);
+            
+            CreateTable(
+                "dbo.Documentos",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        Tipo = c.String(),
+                        DataDeAlteração = c.DateTime(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID);
+            
+            CreateTable(
                 "dbo.Enderecoes",
                 c => new
                     {
@@ -95,6 +114,8 @@ namespace WebApplication1.Migrations
             DropIndex("dbo.Estadoes", new[] { "PaisID" });
             DropIndex("dbo.Cidades", new[] { "EstadoID" });
             DropTable("dbo.Enderecoes");
+            DropTable("dbo.Documentos");
+            DropTable("dbo.Detalhes");
             DropTable("dbo.Crms");
             DropTable("dbo.Pais");
             DropTable("dbo.Estadoes");
