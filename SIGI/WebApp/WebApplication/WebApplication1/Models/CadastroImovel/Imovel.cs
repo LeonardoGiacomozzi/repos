@@ -23,7 +23,7 @@ namespace SIGI.Models.CadastroImovel
         public EtipoDeImovel TipoDeImovel { get; set; }
         public EFinalidadeImovel Finalidade { get; set; }
         public Endereco Endereco { get; set; }
-        public Pessoa Responsavel { get; set; }
+        public IPessoa Responsavel { get; set; }
         public CodigoIntegracao CdgIntegracao { get; set; }
         public double MetragemUtil { get; set; }
         public double MetragemTotal{ get; set; }

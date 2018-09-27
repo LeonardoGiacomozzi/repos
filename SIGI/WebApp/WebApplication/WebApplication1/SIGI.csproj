@@ -71,6 +71,7 @@
     <Compile Include="DAO\CadastroImoveis\DescricaoDAO.cs" />
     <Compile Include="DAO\CadastroImoveis\DocumentosDAO.cs" />
     <Compile Include="DAO\CadastroImoveis\ValorVendaDAO.cs" />
+    <Compile Include="DAO\CadastroPesoa\PessoaFisicaDAO.cs" />
     <Compile Include="DAO\CidadeDAO.cs" />
     <Compile Include="DAO\EnderecoDAO.cs" />
     <Compile Include="DAO\EstadoDAO.cs" />
@@ -78,6 +79,10 @@
     <Compile Include="DAO\Usuarios\UsuarioDAO.cs" />
     <Compile Include="Filtros\AutorizaFiltroAtribute.cs" />
     <Compile Include="Filtros\FiltroAdmAtribute.cs" />
+    <Compile Include="Migrations\201809271431581_Inicial.cs" />
+    <Compile Include="Migrations\201809271431581_Inicial.Designer.cs">
+      <DependentUpon>201809271431581_Inicial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CadastroEndereco\Cidade.cs" />
     <Compile Include="Models\CadastroEndereco\Estado.cs" />
@@ -102,8 +107,8 @@
     <Compile Include="Models\CadastroImovel\Valores\IValor.cs" />
     <Compile Include="Models\CadastroImovel\Valores\ValorLocacao.cs" />
     <Compile Include="Models\CadastroImovel\Valores\ValorVenda.cs" />
-    <Compile Include="Models\CadastroPessoa\Pessoa.cs" />
     <Compile Include="Models\CadastroEndereco\Endereco.cs" />
+    <Compile Include="Models\CadastroPessoa\IPessoa.cs" />
     <Compile Include="Models\CadastroPessoa\PessoaFisica.cs" />
     <Compile Include="Models\CadastroPessoa\EEstadoCivil.cs" />
     <Compile Include="Models\CadastroPessoa\ETipoPessoa.cs" />
@@ -681,7 +686,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="DAO\Maping\" />
     <Folder Include="Views\Cidade\" />
     <Folder Include="Views\Estado\" />
     <Folder Include="Views\Paises\" />
@@ -868,6 +872,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\WebGrease.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201809271431581_Inicial.resx">
+      <DependentUpon>201809271431581_Inicial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -5,7 +5,7 @@ using System.Web;
 
 namespace SIGI.Models.Pessoas
 {
-    public abstract class Pessoa
+    public interface IPessoa
     {
     }
 }

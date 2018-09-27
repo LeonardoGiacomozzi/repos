@@ -1,6 +1,6 @@
 ﻿namespace SIGI.Models.CadastroImovel.Valores
 {
-    public abstract class ValorLocacao:IValor
+    public class ValorLocacao:IValor
     {
         public int ID { get; set; }
         public double IPTU { get; set; }

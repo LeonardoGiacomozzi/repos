@@ -578,3 +578,5 @@ D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\bin\SIGI.dll
 D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\bin\SIGI.pdb
 D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\SIGI.dll
 D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\SIGI.pdb
+D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\WebApplication1.Migrations.Inicial.resources
+D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\SIGI.csproj.GenerateResource.cache

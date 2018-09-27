@@ -11,6 +11,7 @@ using WebApplication1.Models.CadastroImovel.ListaDocumentos;
 using SIGI.Models.CadastroImovel.Caracteristicas;
 using SIGI.Models.Usuarios;
 using SIGI.Models.CadastroImovel.Valores;
+using SIGI.Models.Pessoas;
 
 namespace SIGI.DAO
 {
@@ -39,5 +40,7 @@ namespace SIGI.DAO
         public DbSet<Imovel> Imovel { get;  set; }
         //USUARIO
         public DbSet<Usuario> Usuario { get; set; }
+        //PESSOAS
+        public DbSet<PessoaFisica> PessoaFisica { get; internal set; }
     }
 }
