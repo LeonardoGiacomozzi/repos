@@ -9,8 +9,7 @@ namespace WebApplication1.DAO.CadastroImoveis
 {
     public class CRMDAO
     {
-        public class AnexosDAO
-        {
+       
             public void Adiciona(Crm crm)
             {
                 using (var context = new SIGIContext())
@@ -78,6 +77,6 @@ namespace WebApplication1.DAO.CadastroImoveis
 
                 }
             }
-        }
+        
     }
 }

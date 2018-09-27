@@ -1,0 +1,218 @@
+﻿
+@{
+    ViewBag.Title = "Caracteristicas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/content/MeuCss.css" rel="stylesheet" type="text/css">
+<div class="row">
+    <h2>Principais</h2>
+    <div class="col-md-8">
+        <div class="portlet box red">
+            <div class="portlet-title">
+                <div class="caption" col-md-12>
+                    <i class="fa fa-cogs"></i> Lista De Caracteristicas Pricipais
+                </div>
+                <div class="actions">
+                    <a href="javascript:;" class="btn btn-default btn-sm" id="botao-add-caracP">
+                        <i class="fa fa-plus"></i> Add
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body col-md-12">
+
+                <div class="table-scrollable">
+                    <table id="gridPrincipal" class="table table-hover">
+                        <thead class="">
+                            <tr>
+                                <th class="col-md-1">#</th>
+                                <th class="col-md-1">Id</th>
+                                <th class="col-md-3 ">Nome</th>
+                                <th class="col-md-3 ">Valor</th>
+                                <th class="col-md-1 ">Tipo De Dado</th>
+                                <th class="col-md-1 ">Ativo</th>
+                                <th class="col-md-1">
+                                    <a></a>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="">
+                            @foreach (var caracteristicaP in ViewBag.caracteristicasP)
+                            {
+                                <tr data-id="@caracteristicaP.ID" data-nome="@caracteristicaP.Nome" data-tipo="@caracteristicaP.TipoDeDado" data-ativo="@caracteristicaP.Ativo"
+                                    data-valor="@caracteristicaP.Valor">
+                                    <td class="endereco@(caracteristicaP.ID)">
+                                        <a href="@Url.Action("RemoverPrincipal","Caracteristicas", new { id = caracteristicaP.ID })" class="botao-remove-cidade"><i class="fa fa-minus-circle font-red"></i></a>
+                                    </td>
+                                    <td class="caracteristicaP@(caracteristicaP.ID)">@caracteristicaP.ID</td>
+                                    <td class="caracteristicaP@(caracteristicaP.ID)">@caracteristicaP.Nome</td>
+                                    <td class="caracteristicaP@(caracteristicaP.ID)">@caracteristicaP.Valor</td>
+                                    <td class="caracteristicaP@(caracteristicaP.ID)">@caracteristicaP.TipoDeDado</td>
+                                    <td class="caracteristicaP@(caracteristicaP.ID)">@caracteristicaP.Ativo</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <h2>Gerais</h2>
+        <div class="portlet box red">
+            <div class="portlet-title">
+                <div class="caption" col-md-12>
+                    <i class="fa fa-cogs"></i> Lista De Caracteristicas Gerais
+                </div>
+                <div class="actions">
+                    <a href="javascript:;" class="btn btn-default btn-sm" id="botao-add-caracG">
+                        <i class="fa fa-plus"></i> Add
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body col-md-12">
+
+                <div class="table-scrollable">
+                    <table id="gridGeral" class="table table-hover">
+                        <thead class="">
+                            <tr>
+                                <th class="col-md-1">#</th>
+                                <th class="col-md-1">Id</th>
+                                <th class="col-md-3 ">Nome</th>
+                                <th class="col-md-3 ">Valor</th>
+                                <th class="col-md-1 ">Tipo De Dado</th>
+                                <th class="col-md-1 ">Ativo</th>
+                                <th class="col-md-1">
+                                    <a></a>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="">
+                            @foreach (var caracteristicaG in ViewBag.caracteristicasG)
+                            {
+                                <tr data-id="@caracteristicaG.ID" data-nome="@caracteristicaG.Nome" data-tipo="@caracteristicaG.TipoDeDado" data-ativo="@caracteristicaG.Ativo"data-valor="@caracteristicaG.Valor">
+                                    <td class="endereco@(caracteristicaG.ID)">
+                                        <a href="@Url.Action("RemoverGeral","Caracteristicas", new { id = caracteristicaG.ID })" class="botao-remove-cidade"><i class="fa fa-minus-circle font-red"></i></a>
+                                    </td>
+                                    <td class="caracteristicaG@(caracteristicaG.ID)">@caracteristicaG.ID</td>
+                                    <td class="caracteristicaG@(caracteristicaG.ID)">@caracteristicaG.Nome</td>
+                                    <td class="caracteristicaG@(caracteristicaG.ID)">@caracteristicaG.Valor</td>
+                                    <td class="caracteristicaG@(caracteristicaG.ID)">@caracteristicaG.TipoDeDado</td>
+                                    <td class="caracteristicaG@(caracteristicaG.ID)">@caracteristicaG.Ativo</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 " id="alter-caracteristicaP">
+        <div class="portlet box purple">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i>Cadastro de Caracteristica Principal
+                </div>
+            </div>
+            <div class="portlet-body form">
+
+                <form id="form-cadastro-caracteristicaP" action="/Caracteristicas/InsertPrincipal" method="post">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <input class="id-secreto-p" style="display:none;" name="caracteristica.ID">
+                            <label class="control-label">Nome</label>
+                            <input type="text" name="caracteristica.Nome" class="form-control nome-alterar-p" placeholder="Nome da Categoria">
+                            <label class="control-label">Tipo de dado</label>
+                            <select name="caracteristica.TipoDeDado" class="tipo-alterar-p" >
+                                @foreach (var item in ViewBag.tipoDado)
+                                {
+
+                                    <option value="@item">
+                                        @item
+                                    </option>
+
+                                }
+
+                            </select><br>
+                            <label class="control-label">Valor</label>
+                            <input type="text" name="caracteristica.Valor" class="form-control valor-alterar-p" placeholder="Valor da Categoria">
+                            <select name="caracteristica.Ativo"  class="ativo-alterar-p" >
+
+                                <option value="True">
+                                    Ativo
+                                </option>
+                                <option value="False">
+                                    Inativo
+                                </option>
+
+                                
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-actions right">
+                      <button type="submit" class="btn green">Salvar</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 " id="alter-caracteristicaG">
+        <div class="portlet box purple">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i>Cadastro de Caracteristica Gerais
+                </div>
+            </div>
+            <div class="portlet-body form">
+
+                <form id="form-cadastro-caracteristicaG" action="/Caracteristicas/InsertGeral" method="post">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <input id="id-secreto-g" style="display:block;" name="caracteristica.ID" >
+                            <label class="control-label">Nome</label>
+                            <input type="text" name="caracteristica.Nome" class="form-control nome-alterar-g" placeholder="Nome da Categoria">
+                            <label class="control-label">Tipo de dado</label>
+                            <select name="caracteristica.TipoDeDado" class="tipo-alterar-g">
+                                @foreach (var item in ViewBag.tipoDado)
+                                {
+
+                                    <option value="@item">
+                                        @item
+                                    </option>
+
+                                }
+
+                            </select><br>
+                            <label class="control-label">Valor</label>
+                            <input type="text" name="caracteristica.Valor" class="form-control valor-alterar-g" placeholder="Valor da Categoria">
+                            <select name="caracteristica.Ativo" class="ativo-alterar-g">
+
+                                <option value="True">
+                                    Ativo
+                                </option>
+                                <option value="False">
+                                    Inativo
+                                </option>
+
+
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-actions right">
+                        <button type="submit" class="btn green">Salvar</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/content/scripts/Caracteristicas.js"></script>

@@ -10,7 +10,8 @@ namespace SIGI.Models.CadastroImovel.Caracteristicas
         public ETipoDeDado  TipoDeDado { get; set; }
         public string Nome { get ; set ; }
         public string Valor { get ; set ; }
-        private bool Ativo { get; set; }
+        public int ID { get;  set; }
+        public bool Ativo { get; set; }
 
         public void Converte(ETipoDeDado tipo)
         {

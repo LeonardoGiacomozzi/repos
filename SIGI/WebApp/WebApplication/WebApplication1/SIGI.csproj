@@ -14,8 +14,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebApplication1</RootNamespace>
-    <AssemblyName>WebApplication1</AssemblyName>
+    <RootNamespace>SIGI</RootNamespace>
+    <AssemblyName>SIGI</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -51,24 +51,33 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CaracteristicasController.cs" />
     <Compile Include="Controllers\CidadeController.cs" />
     <Compile Include="Controllers\EnderecoController.cs" />
     <Compile Include="Controllers\EstadoController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImoveisController.cs" />
     <Compile Include="Controllers\LocalidadeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PaisesController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Controllers\ValorLocacaoController.cs" />
+    <Compile Include="Controllers\ValorVendaController.cs" />
     <Compile Include="DAO\CadastroImoveis\AnexosDAO.cs" />
+    <Compile Include="DAO\CadastroImoveis\CaracteristicaGeralDAO.cs" />
+    <Compile Include="DAO\CadastroImoveis\CaracteristicaPricipalDAO.cs" />
+    <Compile Include="DAO\CadastroImoveis\ImovelDAO.cs" />
+    <Compile Include="DAO\CadastroImoveis\ValorLocacaoDAO.cs" />
     <Compile Include="DAO\CadastroImoveis\CRMDAO.cs" />
     <Compile Include="DAO\CadastroImoveis\DescricaoDAO.cs" />
     <Compile Include="DAO\CadastroImoveis\DocumentosDAO.cs" />
+    <Compile Include="DAO\CadastroImoveis\ValorVendaDAO.cs" />
     <Compile Include="DAO\CidadeDAO.cs" />
     <Compile Include="DAO\EnderecoDAO.cs" />
     <Compile Include="DAO\EstadoDAO.cs" />
     <Compile Include="DAO\PaisesDAO.cs" />
-    <Compile Include="Migrations\201809211430303_inicial.cs" />
-    <Compile Include="Migrations\201809211430303_inicial.Designer.cs">
-      <DependentUpon>201809211430303_inicial.cs</DependentUpon>
-    </Compile>
+    <Compile Include="DAO\Usuarios\UsuarioDAO.cs" />
+    <Compile Include="Filtros\AutorizaFiltroAtribute.cs" />
+    <Compile Include="Filtros\FiltroAdmAtribute.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CadastroEndereco\Cidade.cs" />
     <Compile Include="Models\CadastroEndereco\Estado.cs" />
@@ -90,7 +99,8 @@
     <Compile Include="Models\CadastroImovel\EtipoDeImovel.cs" />
     <Compile Include="Models\CadastroImovel\ETipoNegocio.cs" />
     <Compile Include="Models\CadastroImovel\Imovel.cs" />
-    <Compile Include="Models\CadastroImovel\Valores\Valor.cs" />
+    <Compile Include="Models\CadastroImovel\Valores\IValor.cs" />
+    <Compile Include="Models\CadastroImovel\Valores\ValorLocacao.cs" />
     <Compile Include="Models\CadastroImovel\Valores\ValorVenda.cs" />
     <Compile Include="Models\CadastroPessoa\Pessoa.cs" />
     <Compile Include="Models\CadastroEndereco\Endereco.cs" />
@@ -98,6 +108,8 @@
     <Compile Include="Models\CadastroPessoa\EEstadoCivil.cs" />
     <Compile Include="Models\CadastroPessoa\ETipoPessoa.cs" />
     <Compile Include="Models\CadastroPessoa\PessoaJuridica.cs" />
+    <Compile Include="Models\Usuarios\EStatus.cs" />
+    <Compile Include="Models\Usuarios\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -541,6 +553,8 @@
     <Content Include="content\global\scripts\metronic.js" />
     <Content Include="content\MeuCss.css" />
     <Content Include="content\scripts\CEP.js" />
+    <Content Include="content\scripts\Caracteristicas.js" />
+    <Content Include="content\scripts\Usuario.js" />
     <Content Include="content\scripts\Endereco.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -648,9 +662,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
@@ -662,6 +673,11 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Localidade\Index.cshtml" />
     <Content Include="Views\Endereco\Index.cshtml" />
+    <Content Include="Views\Caracteristicas\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Usuario\NaoAdm.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Imoveis\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -669,6 +685,8 @@
     <Folder Include="Views\Cidade\" />
     <Folder Include="Views\Estado\" />
     <Folder Include="Views\Paises\" />
+    <Folder Include="Views\ValorLocacao\" />
+    <Folder Include="Views\ValorVenda\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -850,11 +868,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\WebGrease.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201809211430303_inicial.resx">
-      <DependentUpon>201809211430303_inicial.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,4 +1,5 @@
 ﻿using SIGI.DAO;
+using SIGI.Filtros;
 using SIGI.Models.CadastroEndereco;
 using System;
 using System.Collections.Generic;
@@ -6,8 +7,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace WebApplication1.Controllers
+
 {
+    [AutorizaFiltroAttribute]
     public class CidadeController : Controller
     {
         // GET: Cidade

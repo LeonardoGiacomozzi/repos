@@ -1,4 +1,5 @@
 ﻿using SIGI.DAO;
+using SIGI.Filtros;
 using SIGI.Models.CadastroEndereco;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Web.Mvc;
 
 namespace SIGI.Controllers
 {
+    [AutorizaFiltroAttribute]
     public class EnderecoController : Controller
     {
 

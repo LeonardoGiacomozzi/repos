@@ -8,6 +8,9 @@ using WebApplication1.Models.CadastroImovel;
 using SIGI.Models.CadastroImovel;
 using SIGI.Models.CadastroImovel.ListaDetalhes;
 using WebApplication1.Models.CadastroImovel.ListaDocumentos;
+using SIGI.Models.CadastroImovel.Caracteristicas;
+using SIGI.Models.Usuarios;
+using SIGI.Models.CadastroImovel.Valores;
 
 namespace SIGI.DAO
 {
@@ -29,7 +32,12 @@ namespace SIGI.DAO
         public DbSet<Crm> CRM{ get; set; }
         public DbSet<Detalhes> Detalhes{ get; set; }
         public DbSet<Documentos> Documentos{ get; set; }
-
-
+        public DbSet<CaracteristicaPrincipal> CaracteristicaPrincipal{ get; set; }
+        public DbSet<CaracteristicasGerais> CaracteristicasGerais { get; set; }
+        public DbSet<ValorLocacao> ValorLocacao { get; set; }
+        public DbSet<ValorVenda> ValorVenda { get; set; }
+        public DbSet<Imovel> Imovel { get;  set; }
+        //USUARIO
+        public DbSet<Usuario> Usuario { get; set; }
     }
 }

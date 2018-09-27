@@ -388,12 +388,7 @@ D:\repos\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\WebApplication1.Mi
 D:\repos\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\WebApplication1.Migrations.AddCidade.resources
 D:\repos\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\WebApplication1.Migrations.TabelaDeEnderecos.resources
 D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\SIGI.csproj.CoreCompileInputs.cache
-D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\WebApplication1.dll
-D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\WebApplication1.pdb
 D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\bin\ApplicationInsights.config
-D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\bin\WebApplication1.dll.config
-D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\bin\WebApplication1.dll
-D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\bin\WebApplication1.pdb
 D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\bin\roslyn\csc.exe
 D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\bin\roslyn\csc.exe.config
 D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\bin\roslyn\csc.rsp
@@ -578,5 +573,8 @@ D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\bin\System.Diagnostics
 D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\bin\System.Memory.dll
 D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\SIGI.csproj.CopyComplete
 D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\SIGI.csprojAssemblyReference.cache
-D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\WebApplication1.Migrations.inicial.resources
-D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\SIGI.csproj.GenerateResource.cache
+D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\bin\SIGI.dll.config
+D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\bin\SIGI.dll
+D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\bin\SIGI.pdb
+D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\SIGI.dll
+D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\SIGI.pdb

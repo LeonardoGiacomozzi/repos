@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="portlet box red">
+        <div class="portlet-title">
+            <div class="caption" col-md-12>
+                <i class="fa fa-cogs"></i> Lista de paises
+            </div>
+            <div class="actions">
+                <a href="javascript:;" class="btn btn-default btn-sm" id="botao-add-pais">
+                    <i class="fa fa-plus"></i> Add
+                </a>
+            </div>
+        </div>
+        <div class="portlet-body col-md-12">
+
+            <div class="table-scrollable">
+                <table id="gridPaises" class="table table-hover">
+                    <thead class="">
+                        <tr>
+                            <th class="col-md-2">#</th>
+                            <th class="col-md-2">Código</th>
+                            <th class="col-md-3">Código De Integração</th>
+                            <th class="col-md-3 col-md-offset-8">Descrição</th>
+                            <th class="col-md-2 col-md-offset-8">Tipo</th>
+                            <th class="col-md-10 col-md-offset-12">
+                                <a></a>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="">
+                        @foreach (var imovel in ViewBag.imoveis)
+                        {
+                            <tr data-id="@imovel.ID" >
+                                <td class="imovel@(imovel.ID)">
+                                    <a href="@Url.Action("Remover","Imovel", new { id = imovel.ID })" class="botao-remove-imovel"><i class="fa fa-minus-circle font-red"></i></a>
+                                </td><td class="cidade@(imovel.ID)">
+                                    <a href="@Url.Action("Edita","Imovel", new { id = imovel.ID })" class="botao-edita-imovel"><i class="fa fa-sm font-red"></i></a>
+                                </td>
+                                <td class="imovel@(imovel.ID)">@imovel.ID</td>
+                                <td class="imovel@(imovel.ID)">@imovel.CdgIntegracao</td>
+                                <td class="imovel@(imovel.ID)">@imovel.DescricaoBreve</td>
+                                <td class="imovel@(imovel.ID)">@imovel.TipoNegocio</td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div> 
+
