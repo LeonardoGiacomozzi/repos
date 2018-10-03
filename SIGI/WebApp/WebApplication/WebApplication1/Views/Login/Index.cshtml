@@ -9,19 +9,26 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+
+    <link href="~/content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/content/CSS/Login.css" rel="stylesheet" />
 </head>
-<body class=" login">
-    <div>
-    <h1>SIGI</h1>
+<body class="login-body">
+    <div class="container corpo">
+    <div class="titulo">
+        <h1>SIGI</h1>
+    </div>
     <form action="/Login/Autenticar" method="post">
         <div>
-            <label for="login">Login</label>
-            <input id="login" type="text" name="usuario.Login">
-            <label for="senha">Senha</label>
-            <input id="senha" type="password" name="usuario.Senha">
+            <label for="login">Login</label><br>
+            <input id="login" type="text" name="usuario.Login" autofocus="">
+            <br>
+            <label for="senha">Senha</label><br>
+            <input id="senha" type="password" name="usuario.Senha"><br>
+            <br>
         </div>
         <div>
-            <input type="submit">
+            <input id="bot-login" type="submit" value="Login">
         </div>
     </form>
 </div>

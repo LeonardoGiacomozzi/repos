@@ -5,6 +5,8 @@
         Solteiro,
         Casado,
         Divorciado,
-        Viuvo
+        Viuvo,
+        nullo
+
     }
 }

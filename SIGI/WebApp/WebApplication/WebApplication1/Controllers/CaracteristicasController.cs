@@ -23,7 +23,7 @@ namespace SIGI.Controllers
            
 
 
-            ViewBag.tipoDado = caracteristicasPricipais.listaTipo();
+            ViewBag.tipoDado = new CaracteristicasPricipaisDAO().listaTipo();
 
             ViewBag.caracteristicasG = caracteristicasGerais.Listar();
          

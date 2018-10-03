@@ -26,7 +26,9 @@ namespace SIGI.Controllers
 
             CidadeDAO cidadeDAO = new CidadeDAO();
             IList<Cidade> cidades = cidadeDAO.ListarFullProperties();
-            ViewBag.cidades = cidades;
+
+            ViewBag.cidades = cidades; EnderecoDAO enderecoDAO = new EnderecoDAO();
+            ViewBag.endereco = enderecoDAO.ListarFullProperties();
 
             return View();
         }

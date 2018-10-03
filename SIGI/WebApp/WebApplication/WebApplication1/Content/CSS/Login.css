@@ -1,0 +1,28 @@
+﻿.corpo {
+    margin-top:10%;
+    width:20%;
+    height:25%;
+    background-color:#87CEEB;
+     align-content:center;
+}
+
+body{
+    background-color:#ADD8E6;
+}
+
+.titulo{
+
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left:45%;
+}
+
+#bot-login {
+    width:100px;
+    margin-bottom: 10px;
+    margin-left: 46%;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+#login{
+
+}

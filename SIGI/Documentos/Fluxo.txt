@@ -1,0 +1,6 @@
+1ºAtendimento
+	Gerar Contrato Locação
+	Gerar Contrato Venda
+		Vão para pagina de cadastro de imoveis com o cadastro do contrato;
+	Finalizar atendimento sem conversão
+		Informar um motivo de não conversão

@@ -11,7 +11,7 @@ namespace SIGI.Controllers
     public class ValorVendaController : Controller
     {
        
-        public ActionResult Adiciona(ValorVenda valor)
+        public ActionResult Adiciona(Valor valor)
         {
             ValorVendaDAO vendaDAO = new ValorVendaDAO();
             
@@ -20,7 +20,7 @@ namespace SIGI.Controllers
             return RedirectToAction("");
         }
 
-        public ActionResult Altera(ValorVenda valor)
+        public ActionResult Altera(Valor valor)
         {
             ValorVendaDAO vendaDAO = new ValorVendaDAO();
 
@@ -28,7 +28,7 @@ namespace SIGI.Controllers
 
             return RedirectToAction("");
         }
-        public ActionResult Renover(ValorVenda valor)
+        public ActionResult Renover(Valor valor)
         {
             ValorVendaDAO vendaDAO = new ValorVendaDAO();
 

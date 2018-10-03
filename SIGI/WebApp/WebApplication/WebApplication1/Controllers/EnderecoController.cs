@@ -48,7 +48,7 @@ namespace SIGI.Controllers
             }
 
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","Localidade");
         }
 
         public ActionResult Remover(int id)

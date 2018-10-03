@@ -8,7 +8,7 @@ namespace SIGI.DAO.CadastroImoveis
 {
     public class ValorVendaDAO
     {
-        public void Adiciona(ValorVenda valor)
+        public void Adiciona(Valor valor)
         {
             using (var context = new SIGIContext())
             {
@@ -17,7 +17,7 @@ namespace SIGI.DAO.CadastroImoveis
             }
         }
 
-        public IList<ValorVenda> Listar()
+        public IList<Valor> Listar()
         {
 
 
@@ -29,7 +29,7 @@ namespace SIGI.DAO.CadastroImoveis
 
 
         }
-        public ValorVenda BuscarPorId(int Id)
+        public Valor BuscarPorId(int Id)
         {
             using (var context = new SIGIContext())
             {
@@ -41,18 +41,21 @@ namespace SIGI.DAO.CadastroImoveis
 
 
 
-        public void Alterar(ValorVenda valor)
+        public void Alterar(Valor valor)
         {
 
 
             using (var context = new SIGIContext())
             {
-                ValorVenda ValorVenda = context.ValorVenda.FirstOrDefault(d => d.ID == valor.ID);
+                Valor ValorVenda = context.ValorVenda.FirstOrDefault(d => d.ID == valor.ID);
                 ValorVenda.EstaAverbado = valor.EstaAverbado;
                 ValorVenda.EstaEsscriturado = valor.EstaEsscriturado;
                 ValorVenda.PodeFinanciar = valor.PodeFinanciar;
                 ValorVenda.DescricaoPagamento = valor.DescricaoPagamento;
                 ValorVenda.ValorDeVenda = valor.ValorDeVenda;
+                ValorVenda.Condominio = valor.Condominio;
+                ValorVenda.IPTU = valor.IPTU;
+                ValorVenda.Mensalidade = valor.Mensalidade;
 
                 context.SaveChanges();
             }

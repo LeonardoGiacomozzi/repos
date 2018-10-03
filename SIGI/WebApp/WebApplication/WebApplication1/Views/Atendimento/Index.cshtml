@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "Vizualizar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Histórico</h2>
+<div class="row">
+    <div class="col-md-8">
+    <!-- BEGIN SAMPLE TABLE PORTLET-->
+        <div class="portlet box red">
+            <div class="portlet-title">
+                <div class="caption" col-md-12>
+                    <i class="fa fa-cogs"></i> Histórico De Atendimentos
+                </div>
+                <div class="actions">
+                    <a href="@Url.Action("Criar","Atendimento")" class="btn btn-default btn-sm" id="botao-add-atendimento">
+                        <i class="fa fa-plus"></i> Add
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body col-md-12">
+
+                 <div class="table-scrollable">
+                    <table id="gridPaises" class="table table-hover">
+                        <thead class="">
+                            <tr>
+                                @*<th class="col-md-1">#</th>*@
+                                <th class="col-md-1">Id</th>
+                                <th class="col-md-3 col-md-offset-8">Nome</th>
+                                <th class="col-md-1 col-md-offset-8">Funcionario</th>
+                                <th class="col-md-1 col-md-offset-8">Cliente</th>
+                                <th class="col-md-2 col-md-offset-8">Data</th>
+                                <th class="col-md-6 col-md-offset-8">Relatório</th>
+                                <th class="col-md-1 col-md-offset-8">Resultado</th>
+                                <th class="col-md-10 col-md-offset-12">
+                                    <a></a>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="">
+                            @foreach (var atendimento in ViewBag.atendimentos)
+                            {
+                                <tr>
+                                   
+                                    <td class="atendimento@(atendimento.ID)">@atendimento.ID</td>
+                                    <td class="atendimento@(atendimento.ID)">@atendimento.Nome</td>
+                                    <td class="atendimento@(atendimento.ID)">@atendimento.Funcionario</td>
+                                    <td class="atendimento@(atendimento.ID)">@atendimento.Cliente</td>
+                                    <td class="atendimento@(atendimento.ID)">@atendimento.DataAtendimento.ToString("dd/MM/yyyy")</td>
+                                    <td class="atendimento@(atendimento.ID)">@atendimento.Relatorio</td>
+                                    <td class="atendimento@(atendimento.ID)">@atendimento.Resultado</td>
+                                    
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -55,6 +55,7 @@ namespace SIGI.DAO
         public Cidade GetFullProperties(Cidade cidade)
         {
             cidade.Estado= new EstadoDAO().BuscarPorId(cidade.EstadoID);
+            cidade.Estado = new EstadoDAO().GetFullProperties(cidade.Estado);
             return cidade;
         }
 

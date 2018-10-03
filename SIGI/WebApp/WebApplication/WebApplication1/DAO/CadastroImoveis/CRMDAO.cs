@@ -64,7 +64,6 @@ namespace WebApplication1.DAO.CadastroImoveis
                     context.SaveChanges();
                 }
 
-
             }
 
             public void Deletar(int id)

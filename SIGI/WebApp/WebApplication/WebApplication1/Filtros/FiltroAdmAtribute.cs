@@ -18,8 +18,17 @@ namespace SIGI.Filtros
             if (usuario != null)
             {
                 var usuarioBanco = new UsuarioDAO().Buscar((Usuario)usuario);
-
-                if (usuarioBanco.Status != EStatus.Administrador)
+                if (usuarioBanco == null)
+                {
+                   
+                        filterContext.Result = new RedirectToRouteResult(
+                        new RouteValueDictionary(
+                            new { controller = "Usuario", action = "NaoAdm" }
+                            )
+                        );
+                    
+                }
+                else if (usuarioBanco.Status != EStatus.Administrador)
                 {
                     filterContext.Result = new RedirectToRouteResult(
                     new RouteValueDictionary(

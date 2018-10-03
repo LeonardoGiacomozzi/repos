@@ -1,0 +1,117 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-4 offset-md-8" id="forms-updates-PJ">
+        <div class="portlet box purple">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i>Cadastro de Pessoa Juridica
+                </div>
+            </div>
+            <div class="portlet-body form">
+
+                <form id="form-cadastro-PJ" action="/PessoaJuridica/Adiciona" method="post">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <input class="id-secreto-PJ" style="display:none;" name="pessoa.ID">
+                            <label class="control-label">Codigo Interno</label>
+                            <input type="text" name="imovel.Codigo" class="form-control cdg-alterar" placeholder="Codigo Interno"
+                                   value="@ViewBag.imovel.Codigo">
+                            <label class="control-label">Descrição Breve</label>
+                            <input type="text" name="imovel.DescricaoBreve" class="form-control db-alterar" placeholder="Descricao Breve"
+                                   value="@ViewBag.imovel.DescricaoBreve">
+                            <label class="control-label">Descrição Completa</label>
+                            <textarea name="imovel.DescricaoBreve" class="form-control db-alterar" placeholder="Descricao Breve">
+                                    @ViewBag.imovel.DescricaoCompleta</textarea>
+                            <label class="control-label">Tipo De Negocio</label>
+                            <select name="imovel.TipoNegocio" class="negocio-alterar">
+                                @foreach (var tipo in ViewBag.tipoNegocio)
+                                {
+                                    <option value="@tipo">
+                                        @tipo
+                                    </option>
+                                }
+                            </select><br>
+                            <label class="control-label"> Tipo de Imovel</label>
+                            <select name="imovel.TipoDeImovel" class="tipoImvl-alterar">
+                                @foreach (var tipo in ViewBag.tipoDeImovel)
+                                {
+                                    <option value="@tipo">
+                                        @tipo
+                                    </option>
+                                }
+                            </select><br>
+                            <label class="control-label"> Finalidade Do Imovel</label>
+                            <select name="imovel.Finalidade" class="finalidade-alterar">
+                                @foreach (var tipo in ViewBag.finalidade)
+                                {
+                                    <option value="@tipo">
+                                        @tipo
+                                    </option>
+                                }
+                            </select><br>
+                            <label class="control-label">Endereço</label>
+                            <select name="pessoa.EnderecoID" class="endereco-alterar">
+                                @foreach (var endereco in ViewBag.enderecos)
+                                {
+                                    <option value="@endereco.ID">
+                                        @endereco.Rua  @endereco.Numero
+                                    </option>
+                                }
+                            </select><br>
+                            <label class="control-label">Responsavel</label>
+                            <select name="pessoa.ResponsavelID" class="responsavel-alterar">
+
+                                <option value="0">
+                                    -----Pessoa Fisica-----
+                                </option>
+
+                                @foreach (var responsavel in ViewBag.Pf)
+                                {
+                                    <option value="@responsavel.ID">
+                                        @responsavel.Nome
+                                    </option>
+                                }
+                                <option value="0">
+                                    -----Pessoa Juridica-----
+                                </option>
+
+                                @foreach (var responsavel in ViewBag.PJ)
+                                {
+                                    <option value="@responsavel.ID">
+                                        @responsavel.Nome
+                                    </option>
+                                }
+                            </select><br>
+                            <label class="control-label">Codigo De Integração</label>
+                            <label class="control-label">Origem</label>
+                            <input type="text" name="imovel.CdgIntegracao.Origem" class="form-control cdgO-alterar" placeholder="Origem do Codigo">
+                            <label class="control-label">Codigo</label>
+                            <input type="text" name="imovel.CdgIntegracao.Codigo" class="form-control cdg-alterar" placeholder="Codigo">
+                            <label class="control-label">Área Útil</label>
+                            <input type="number" name="imovel.MetragemUtil" class="form-control mu-alterar" placeholder="Area Útil">
+                            <label class="control-label">Área Total</label>
+                            <input type="number" name="imovel.MetragemTotal" class="form-control met-alterar" placeholder="Área Total">
+                            <label class="control-label">Web Site</label>
+                            <input type="text" name="pessoa.WebSite" class="form-control web-alterar-PJ" placeholder="Web Site da empresa">
+                            <label class="control-label">Observações</label>
+                            <input type="text" name="pessoa.Observacao" class="form-control obs-alterar-PJ" placeholder="Algumas Observações sobre a empresa">
+
+                            <label class="control-label">Telefone</label>
+                            <input type="text" name="pessoa.Telefone" class="form-control tel-alterar-PJ" placeholder="ddd-0000-0000">
+                            <label class="control-label">Celular</label>
+                            <input type="text" name="pessoa.Celular" class="form-control cell-alterar-PJ" placeholder="ddd-000-000-000">
+                        </div>
+                    </div>
+                    <div class="form-actions right">
+                        <button type="submit" class="btn green">Salvar</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

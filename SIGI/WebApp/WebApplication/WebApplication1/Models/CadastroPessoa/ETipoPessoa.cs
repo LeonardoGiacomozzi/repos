@@ -4,6 +4,7 @@
     {
         Cliente,
         Fornecedor,
-        Colaborador
+        Colaborador,
+        Funcionario
     }
 }

@@ -5,7 +5,9 @@ using System.Web;
 
 namespace SIGI.Models.Pessoas
 {
-    public interface IPessoa
+    public enum EPessoa
     {
+       Pessoa_Fisica,
+       Pessoa_Juridica
     }
 }

@@ -4,8 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using WebApplication1.Models.CadastroImovel;
-using WebApplication1.Models.CadastroImovel.ListaDocumentos;
 
 namespace SIGI.DAO.CadastroImoveis
 {
@@ -44,7 +42,40 @@ namespace SIGI.DAO.CadastroImoveis
             }
         }
 
-       
+        public IList<Imovel> ListarFullPropriety()
+        {
+
+
+            using (var context = new SIGIContext())
+            {
+
+                var lista =context.Imovel.ToList();
+                IList<Imovel> nova = new List<Imovel>();
+                foreach (var imovel in lista)
+                {
+                    nova.Add(GetFullPropriety(imovel));
+                }
+                return nova;
+            }
+
+
+        }
+        public Imovel GetFullPropriety(Imovel imovel) {
+
+            Imovel imovelnovo = BuscarPorId(imovel.ID);
+            imovelnovo.Valor = new ValorVendaDAO().BuscarPorId(imovelnovo.ValorID);
+            imovelnovo.CdgIntegracao = new CdgIntegracaoDAO().BuscarPorId(imovelnovo.CdgIntegracaoID);
+            imovelnovo.Detalhes = new DetalhesDAO().BuscarPorId(imovelnovo.DetalhesID);
+            imovelnovo.Endereco = new EnderecoDAO().BuscarPorId(imovelnovo.EnderecoID);
+            imovelnovo.Endereco = new EnderecoDAO().GetFullProperties(imovelnovo.Endereco);
+         
+            //imovelnovo.Documentos
+            //imovelnovo.Responsavel
+            //imovelnovo.CaracteristicasGerais
+            //imovelnovo.CaracteristicasPrincipais
+            //imovelnovo.Anexos
+            return imovelnovo;
+        }
 
         public void Alterar(Imovel imovel)
         {
@@ -54,8 +85,7 @@ namespace SIGI.DAO.CadastroImoveis
             {
                 Imovel imovelDoBanco = context.Imovel.FirstOrDefault(c => c.ID == imovel.ID);
 
-                imovelDoBanco.Anexos = (imovel.Anexos != null? imovel.Anexos: imovelDoBanco.Anexos);
-
+         
                 imovelDoBanco.CaracteristicasGerais = (imovel.CaracteristicasGerais != null? imovel.CaracteristicasGerais : imovelDoBanco.CaracteristicasGerais);
 
                 imovelDoBanco.CaracteristicasPrincipais= (imovel.CaracteristicasPrincipais != null? imovel.CaracteristicasPrincipais: imovelDoBanco.CaracteristicasPrincipais);
@@ -70,7 +100,7 @@ namespace SIGI.DAO.CadastroImoveis
 
                 imovelDoBanco.Detalhes = (imovel.Detalhes != null? imovel.Detalhes: imovelDoBanco.Detalhes);
 
-                imovelDoBanco.Documentos = (imovel.Documentos != null? imovel.Documentos: imovelDoBanco.Documentos);
+               
 
                 imovelDoBanco.Endereco = (imovel.Endereco != null? imovel.Endereco: imovelDoBanco.Endereco);
 
@@ -151,19 +181,7 @@ namespace SIGI.DAO.CadastroImoveis
             imovel.CaracteristicasGerais.Remove(caracteristica);
         }
 
-        public void AdicionaAnexo(Anexo anexo,
-           Imovel imovel)
-        {
-            imovel.Anexos.Add(anexo);
-        }
-
-
-        public void RemoveAnexo(Anexo anexo,
-            Imovel imovel)
-        {
-            imovel.Anexos.Remove(anexo);
-        }
-
+       
         public void AdicionaCrm(Crm crm,
         Imovel imovel)
         {
@@ -177,17 +195,6 @@ namespace SIGI.DAO.CadastroImoveis
             imovel.Crm.Remove(crm);
         }
 
-        public void AdicionaDocumentos(Documentos documentos,
-        Imovel imovel)
-        {
-            imovel.Documentos.Add(documentos);
-        }
-
-
-        public void RemoveDocumentos(Documentos documentos,
-            Imovel imovel)
-        {
-            imovel.Documentos.Remove(documentos);
-        }
+     
     }
 }

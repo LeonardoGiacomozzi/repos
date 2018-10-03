@@ -19,7 +19,7 @@ namespace WebApplication1.Controllers
         {
 
             CidadeDAO cidadeDAO = new CidadeDAO();
-            cidadeDAO.Adiciona(cidade);
+            
             if (cidade.ID == 0)
             {
                 cidadeDAO.Adiciona(cidade);

@@ -37,14 +37,14 @@
                         <tbody class="">
                             @foreach (var pais in ViewBag.paises)
                             {
-                            <tr data-id="@pais.Id" data-nome="@pais.Nome">
-                                <td class="cidade@(pais.Id)">
-                                    <a href="@Url.Action("Remover","Paises", new { id = pais.Id })" class="botao-remove-cidade"><i class="fa fa-minus-circle font-red"></i></a>
-                                </td>
-                                <td class="pais@(pais.Id)">@pais.Id</td>
-                                <td class="pais@(pais.Id)">@pais.Nome</td>
+                                <tr data-id="@pais.Id" data-nome="@pais.Nome">
+                                    <td class="cidade@(pais.Id)">
+                                        <a href="@Url.Action("Remover","Paises", new { id = pais.Id })" class="botao-remove-cidade"><i class="fa fa-minus-circle font-red"></i></a>
+                                    </td>
+                                    <td class="pais@(pais.Id)">@pais.Id</td>
+                                    <td class="pais@(pais.Id)">@pais.Nome</td>
 
-                            </tr>
+                                </tr>
                             }
                         </tbody>
                     </table>
@@ -97,37 +97,37 @@
 
             </div>
             <div class="portlet-body col-md-12">
-                   
-                    <div class="table-scrollable">
-                        <table id="gridEstados" class="table table-hover  ">
-                            <thead class="">
-                                <tr>
-                                    <th class="col-md-1">#</th>
-                                    <th class="col-md-2">Id</th>
-                                    <th class="col-md-12 col-md-offset-8">Estado</th>
-                                    <th class="col-md-12 col-md-offset-5">País</th>
-                                    <th class="col-md-10 col-md-offset-12">
-                                        <a></a>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody class="">
-                                @foreach (var estado in ViewBag.estados)
-                                {
-                                    <tr data-id="@estado.Id" data-nome="@estado.Nome" data-pais="@estado.PaisID" >
-                                        <td class="cidade@(estado.Id)">
-                                            <a href="@Url.Action("Remover","Estado", new { id = estado.Id })" class="botao-remove-cidade"><i class="fa fa-minus-circle font-red"></i></a>
-                                        </td>
-                                        <td  class="estado@(estado.Id)">@estado.Id</td>
-                                        <td class="estado@(estado.Id)">@estado.Nome</td>
-                                        <td class="estado@(estado.Id)">@estado.Pais</td>
 
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="table-scrollable">
+                    <table id="gridEstados" class="table table-hover  ">
+                        <thead class="">
+                            <tr>
+                                <th class="col-md-1">#</th>
+                                <th class="col-md-2">Id</th>
+                                <th class="col-md-12 col-md-offset-8">Estado</th>
+                                <th class="col-md-12 col-md-offset-5">País</th>
+                                <th class="col-md-10 col-md-offset-12">
+                                    <a></a>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="">
+                            @foreach (var estado in ViewBag.estados)
+                            {
+                                <tr data-id="@estado.Id" data-nome="@estado.Nome" data-pais="@estado.PaisID">
+                                    <td class="cidade@(estado.Id)">
+                                        <a href="@Url.Action("Remover","Estado", new { id = estado.Id })" class="botao-remove-cidade"><i class="fa fa-minus-circle font-red"></i></a>
+                                    </td>
+                                    <td class="estado@(estado.Id)">@estado.Id</td>
+                                    <td class="estado@(estado.Id)">@estado.Nome</td>
+                                    <td class="estado@(estado.Id)">@estado.Pais</td>
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
                 </div>
+            </div>
         </div>
     </div>
 
@@ -181,105 +181,217 @@
 </div>
 
 <div class="row">
-    <div class="row">
-         <h2>CIDADE</h2>
-        <div class="col-md-8">
-            <!-- BEGIN SAMPLE TABLE PORTLET-->
-            <div class="portlet box red">
-                <div class="portlet-title">
-                    <div class="caption" col-md-12>
-                        <i class="fa fa-cogs"></i> Lista de Cidades
 
-                    </div>
-                    <div class="actions">
-                        <a href="javascript:;" class="btn btn-default btn-sm" id="botao-add-cidade">
-                            <i class="fa fa-plus"></i> Add
-                        </a>
-                    </div>
+    <h2>CIDADE</h2>
+    <div class="col-md-8">
+        <!-- BEGIN SAMPLE TABLE PORTLET-->
+        <div class="portlet box red">
+            <div class="portlet-title">
+                <div class="caption" col-md-12>
+                    <i class="fa fa-cogs"></i> Lista de Cidades
+
                 </div>
-                <div class="portlet-body col-md-12">
+                <div class="actions">
+                    <a href="javascript:;" class="btn btn-default btn-sm" id="botao-add-cidade">
+                        <i class="fa fa-plus"></i> Add
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body col-md-12">
 
-                    <div class="table-scrollable">
-                        <table id="gridCidade" class="table table-hover  ">
-                            <thead class="tableFont">
-                                <tr>
-                                    <th class="col-md-1">#</th>
-                                    <th class="col-md-2">Id</th>
-                                    <th class="col-md-12 col-md-offset-8">Cidade</th>
-                                    <th class="col-md-12 col-md-offset-8">Estado</th>
-                                    <th class="col-md-10 col-md-offset-12">
-                                        <a></a>
-                                    </th>
+                <div class="table-scrollable">
+                    <table id="gridCidade" class="table table-hover  ">
+                        <thead class="tableFont">
+                            <tr>
+                                <th class="col-md-1">#</th>
+                                <th class="col-md-2">Id</th>
+                                <th class="col-md-12 col-md-offset-8">Cidade</th>
+                                <th class="col-md-12 col-md-offset-8">Estado</th>
+                                <th class="col-md-10 col-md-offset-12">
+                                    <a></a>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="tableFont">
+                            @foreach (var cidade in ViewBag.cidades)
+                            {
+                                <tr data-id="@cidade.ID" data-nome="@cidade.Nome" data-estado="@cidade.EstadoID">
+                                    <td class="cidade@(cidade.ID)">
+                                        <a href="@Url.Action("Remover","Cidade", new { id = cidade.ID })" class="botao-remove-cidade"><i class="fa fa-minus-circle font-red"></i></a>
+                                    </td>
+                                    <td class="cidade@(cidade.ID)">@cidade.ID</td>
+                                    <td class="cidade@(cidade.ID)">@cidade.Nome</td>
+                                    <td class="cidade@(cidade.ID)">@cidade.Estado</td>
                                 </tr>
-                            </thead>
-                            <tbody class="tableFont">
-                                @foreach (var cidade in ViewBag.cidades)
-                                {
-                                    <tr data-id="@cidade.ID" data-nome="@cidade.Nome" data-estado="@cidade.EstadoID">
-                                        <td class="cidade@(cidade.ID)">
-                                            <a href="@Url.Action("Remover","Cidade", new { id = cidade.ID })" class="botao-remove-cidade"><i class="fa fa-minus-circle font-red"></i></a>
-                                        </td>
-                                        <td class="cidade@(cidade.ID)">@cidade.ID</td>
-                                        <td class="cidade@(cidade.ID)">@cidade.Nome</td>
-                                        <td class="cidade@(cidade.ID)">@cidade.Estado</td>
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
-                    </div>
+                            }
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-4 offset-md-8">
-            <div class="portlet box purple">
-                <div class="portlet-title">
-                    <div class="caption">
-                        <i class="fa fa-gift"></i>Cadastro de Cidade
-                    </div>
-                </div>
-                <div class="portlet-body form">
 
-                    <form id="form-cadastro-cidades" action="/Cidade/Adiciona" method="post">
+    <div class="col-md-4 offset-md-8">
+        <div class="portlet box purple">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i>Cadastro de Cidade
+                </div>
+            </div>
+            <div class="portlet-body form">
+
+                <form id="form-cadastro-cidades" action="/Cidade/Adiciona" method="post">
+                    <div class="form-body">
+
                         <div class="form-body">
 
-                            <div class="form-body">
+                            <div class="form-group">
 
-                                <div class="form-group">
+                                <select id="estado-select" name="cidade.EstadoID">
 
-                                    <select id="estado-select" name="cidade.EstadoID">
+                                    @foreach (var item in ViewBag.estados)
+                                    {
 
-                                        @foreach (var item in ViewBag.estados)
-                                        {
+                                        <option value="@item.Id">
+                                            @item.Nome
+                                        </option>
 
-                                            <option value="@item.Id">
-                                                @item.Nome
-                                            </option>
+                                    }
 
-                                        }   
-
-                                    </select>
+                                </select>
 
 
-                                </div>
-                                <div class="form-group">
-                                    <input id="id-secreto3" style="display:none;" name="cidade.ID">
-                                    <label class="control-label">Nome</label>
-                                    <input id="nomec-alterar" type="text" name="cidade.Nome" class="form-control" placeholder="nome de uma cidade nova">
-                                </div>
                             </div>
-                            <div class="form-actions right">
-                                <button type="submit" class="btn blue">Salvar</button>
+                            <div class="form-group">
+                                <input id="id-secreto3" style="display:none;" name="cidade.ID">
+                                <label class="control-label">Nome</label>
+                                <input id="nomec-alterar" type="text" name="cidade.Nome" class="form-control" placeholder="nome de uma cidade nova">
                             </div>
                         </div>
+                        <div class="form-actions right">
+                            <button type="submit" class="btn green">Salvar</button>
+                        </div>
+                    </div>
 
-                    </form>
+                </form>
 
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <h2>Endereços</h2>
+    <div class="col-md-8">
+        <div class="portlet box red">
+            <div class="portlet-title">
+                <div class="caption" col-md-12>
+                    <i class="fa fa-cogs"></i> Lista de Endereços Cadastrados
                 </div>
+                <div class="actions">
+                    <a href="javascript:;" class="btn btn-default btn-sm" id="botao-add-endereco">
+                        <i class="fa fa-plus"></i> Add
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body col-md-12">
+
+                <div class="table-scrollable">
+                    <table id="gridEndereco" class="table table-hover">
+                        <thead class="">
+                            <tr>
+                                <th class="col-md-1">#</th>
+                                <th class="col-md-1">Id</th>
+                                <th class="col-md-1 ">Rua</th>
+                                <th class="col-md-1 ">Numero</th>
+                                <th class="col-md-1 ">Bairro</th>
+                                <th class="col-md-1 ">Cidade</th>
+                                <th class="col-md-1">Estado</th>
+                                <th class="col-md-1">Pais</th>
+                                <th class="col-md-1">CEP</th>
+                                <th class="col-md-1 offset-md-2">Complemento</th>
+                                <th class="col-md-1">
+                                    <a></a>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="">
+                            @foreach (var endereco in ViewBag.endereco)
+                            {
+                                <tr data-id="@endereco.ID" data-cep="@endereco.CEP" data-rua="@endereco.Rua"
+                                    data-num="@endereco.Numero" data-bairro="@endereco.Bairro" data-cidade="@endereco.CidadeID"
+                                    data-complemento="@endereco.Complemento">
+                                    <td class="endereco@(endereco.ID)">
+                                        <a href="@Url.Action("Remover","Endereco", new { id = endereco.ID })" class="botao-remove-cidade"><i class="fa fa-minus-circle font-red"></i></a>
+                                    </td>
+                                    <td class="endereco@(endereco.ID)">@endereco.ID</td>
+                                    <td class="endereco@(endereco.ID)">@endereco.Rua</td>
+                                    <td class="endereco@(endereco.ID)">@endereco.Numero</td>
+                                    <td class="endereco@(endereco.ID)">@endereco.Bairro</td>
+                                    <td class="endereco@(endereco.ID)">@endereco.Cidade</td>
+                                    <td class="endereco@(endereco.ID)">@endereco.Cidade.Estado</td>
+                                    <td class="endereco@(endereco.ID)">@endereco.Cidade.Estado.Pais</td>
+                                    <td class="endereco@(endereco.ID)">@endereco.CEP</td>
+                                    <td class="endereco@(endereco.ID)">@endereco.Complemento</td>
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 " id="alter-localidade">
+        <div class="portlet box purple">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i>Cadastro de Pais
+                </div>
+            </div>
+            <div class="portlet-body form">
+
+                <form id="form-cadastro-endereco" action="/Endereco/Insert" method="post">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <input class="id-secreto" style="display:none;" name="endereco.ID">
+                            <label class="control-label">Rua</label>
+                            <input type="text" name="endereco.Rua" class="form-control rua-alterar" placeholder="Nome da Rua">
+                            <label class="control-label">Bairro</label>
+                            <input type="text" name="endereco.Bairro" class="form-control bairro-alterar" placeholder="Nome do Bairro">
+                            <label class="control-label">Cidade</label>
+                            <select id="endereco-cidade-select" name="endereco.CidadeID">
+
+                                @foreach (var item in ViewBag.cidades)
+                                {
+
+                                    <option value="@item.ID">
+                                        @item.Nome
+                                    </option>
+
+                                }
+
+                            </select>
+                            <label class="control-label">Numero</label>
+                            <input type="text" name="endereco.Numero" class="form-control numero-alterar" placeholder="Nº">
+                            <label class="control-label">CEP</label>
+                            <input type="text" name="endereco.CEP" class="form-control cep-alterar" placeholder="EX 00000-000">
+                            <label class="control-label">Complemento</label>
+                            <input type="text" name="endereco.Complemento" class="form-control complemento-alterar" placeholder="Complemento">
+                        </div>
+                    </div>
+                    <div class="form-actions right">
+                       <button type="submit" class="btn green">Salvar</button>
+                    </div>
+                </form>
+
             </div>
         </div>
     </div>
 </div>
 
+
+
+<script src="~/content/scripts/Endereco.js"></script>
 <script src="~/content/scripts/CEP.js" type="text/javascript"></script>

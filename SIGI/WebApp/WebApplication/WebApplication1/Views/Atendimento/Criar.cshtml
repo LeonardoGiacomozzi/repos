@@ -1,0 +1,126 @@
+﻿
+@{
+    ViewBag.Title = "Criar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Atendimento</h2>
+
+<div class="col-md-4 offset-md-8" id="forms-atendimento">
+    <div>
+        <div class="portlet box purple">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i>Novo
+                </div>
+            </div>
+            <div class="portlet-body form">
+
+                <form id="form-cadastro-atendimento" action="/Atendimento/Adicionar" method="post">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <input class="id-secreto" style="display:none;" name="atendimento.ID">
+
+                            <label class=" control-label">Titulo Do Atendimento</label>
+                            <input class="titulo-alter" name="atendimento.Nome">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Funcionario</label>
+                            <select name="atendimento.FuncionarioID" id="selec-funcionario">
+                                @foreach (var funcionario in ViewBag.funcionarios)
+                                {
+                                    <option value="@funcionario.ID">
+                                        @funcionario.Nome
+                                    </option>
+                                }
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Cliente</label>
+                            <select name="atendimento.ClienteID" id="selec-cliente">
+                                @foreach (var cliente in ViewBag.clientes)
+                                {
+                                    <option value="@cliente.ID">
+                                        @cliente.Nome
+                                    </option>
+                                }
+                            </select>
+                            <a href="@Url.Action("Index","Pessoa")">Cadastrar Cliente</a>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Relatório do atendimento</label>
+                            <textarea name="atendimento.Relatorio" style="width:500px;height:80px;"></textarea>
+
+                            <input class="resultado" style="display:none;" name="atendimento.Resultado" value="@ViewBag.convertido">
+                        </div>
+                    </div>
+                    <div class="form-actions right">
+                        <button type="submit" class="btn green">Cadastrar Imovel</button>
+                        <button type="submit" id="MudaPendet" class="btn green">Congelar</button>
+                        <button type="submit" id="MudaFinalz" class="btn green">Finalizarl</button>
+
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    @*<div>
+            <div class="portlet box purple">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-gift"></i>Agendar
+                    </div>
+                </div>
+                <div class="portlet-body form">
+
+                    <form id="form-cadastro-atendimento" action="/Atendimento/Adicionar" method="post">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <input class="id-secreto" style="display:none;" name="atendimento.ID">
+
+                                <label class=" control-label">Titulo Do Atendimento</label>
+                                <input class="titulo-alter" name="atendimento.Nome">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Funcionario</label>
+                                <select name="atendimento.FuncionarioID" id="selec-funcionario">
+                                    @foreach (var funcionario in ViewBag.funcionarios)
+                                    {
+                                        <option value="@funcionario.ID">
+                                            @funcionario.Nome
+                                        </option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Cliente</label>
+                                <select name="atendimento.ClienteID" id="selec-cliente">
+                                    @foreach (var cliente in ViewBag.clientes)
+                                    {
+                                        <option value="@cliente.ID">
+                                            @cliente.Nome
+                                        </option>
+                                    }
+                                </select>
+                                <a href="@Url.Action("Index","Pessoa")">Cadastrar Cliente</a>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Relatório do atendimento</label>
+                                <textarea name="atendimento.Relatorio" style="width:500px;height:80px;"></textarea>
+
+                                <input class="id-secreto" style="display:none;" name="atendimento.Resultado" value="@ViewBag.resultado">
+                            </div>
+                        </div>
+                        <div class="form-actions right">
+                            <button type="submit" class="btn green">Cadastrar Imovel</button>
+                            <a href="#">Finalizar</a>
+                            <a href="#">Congelar</a>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>*@
+</div>
+<script src="~/content/scripts/AtendimentoSimples.js"></script>

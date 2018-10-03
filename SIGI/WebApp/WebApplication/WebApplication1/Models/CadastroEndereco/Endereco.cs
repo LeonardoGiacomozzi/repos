@@ -17,12 +17,7 @@ namespace SIGI.Models.CadastroEndereco
         public int CidadeID { get; set; }
       
         public Cidade Cidade { get; set; }
-        public int EstadoID { get; set; }
-      
-        public Estado Estado { get; set; }
-        public int PaisID { get; set; }
-        
-        public Pais Pais { get; set; }
+       
         public string Complemento { get; set; }
 
 

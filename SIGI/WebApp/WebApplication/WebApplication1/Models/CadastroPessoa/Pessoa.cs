@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace SIGI.Models.Pessoas
 {
-    public class PessoaFisica:IPessoa
+    public class Pessoa
     {
         public int ID { get; set; }
+        public EPessoa TipoPessoa { get; set; }
         public ETipoPessoa ETipo { get; set; }
         public string Nome { get; set; }       
         public string Profissao { get; set; }
@@ -22,8 +23,16 @@ namespace SIGI.Models.Pessoas
         public DateTime DataNascimento { get; set; }
         public string EmailPrincipal { get; set; }
         public string Observacao { get; set; }
+        public int EnderecoID { get; set; }
         public Endereco Endereco{ get; set; }
         public string Telefone { get; set; }
         public string Celular { get; set; }
+        public string Cnpj { get; set; }
+        public string WebSite { get; set; }
+
+        public override string ToString()
+        {
+            return Nome;
+        }
     }
 }

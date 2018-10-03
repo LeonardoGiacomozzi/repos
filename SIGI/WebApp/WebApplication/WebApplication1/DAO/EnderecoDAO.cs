@@ -39,9 +39,7 @@ namespace SIGI.DAO
         }
         public Endereco GetFullProperties(Endereco endereco)
         {
-            endereco.Pais = new PaisDAO().BuscarPorId(endereco.PaisID);
-            endereco.Estado = new EstadoDAO().BuscarPorId(endereco.EstadoID);
-            endereco.Estado = new EstadoDAO().GetFullProperties(endereco.Estado);
+            
             endereco.Cidade = new CidadeDAO().BuscarPorId(endereco.CidadeID);
             endereco.Cidade = new CidadeDAO().GetFullProperties(endereco.Cidade);
             return endereco;
@@ -93,9 +91,7 @@ namespace SIGI.DAO
                 enderecoDoBanco.CEP = (endereco.CEP != null ? endereco.CEP : enderecoDoBanco.CEP);
                 enderecoDoBanco.Bairro = (endereco.Bairro != null ? endereco.Bairro : enderecoDoBanco.Bairro);
                 enderecoDoBanco.CidadeID = (endereco.CidadeID != 0 ? endereco.CidadeID : enderecoDoBanco.CidadeID);
-                enderecoDoBanco.EstadoID = (endereco.EstadoID != 0 ? endereco.EstadoID : enderecoDoBanco.EstadoID);
-                enderecoDoBanco.PaisID = (endereco.PaisID != 0 ? endereco.PaisID : enderecoDoBanco.PaisID);
-                enderecoDoBanco.Numero = (endereco.Numero != 0 ? endereco.Numero : enderecoDoBanco.Numero);
+               enderecoDoBanco.Numero = (endereco.Numero != 0 ? endereco.Numero : enderecoDoBanco.Numero);
                 enderecoDoBanco.Complemento = (endereco.Complemento != null ? endereco.Complemento : enderecoDoBanco.Complemento);
                 context.SaveChanges();
             }

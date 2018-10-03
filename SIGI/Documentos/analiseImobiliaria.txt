@@ -79,6 +79,10 @@ Cadastro de pessoa
 			Telefone
 	
 Cadastro de atendimento
+	Status
+		Pendente
+		Convertido
+		Não convertido
 	Cliente/pessoa
 	E-mail
 	Celular
@@ -98,12 +102,14 @@ Cadastro de atendimento
 		Locar
 		Vender
 	Corretor da vez
+		Ge
 	
 Caracteristica (Classe)
 	Nome
 	TipoCampo ( Logico, Numerico, Texto ) 
 
 Cadastro de imóveis
+	(Atendimento Origem)
 	Código 
 	Descrição
 	Descrição Detalhada ( CAsa com duas garagens de 20m² )
@@ -411,5 +417,24 @@ Cadastro de Proposta:Imóvel
 	Situaçao;
 
 
+
+
+
+======================================================================================================================
+ 	public static string CPF => @"(\d{3})[.](\d{3})[.](\d{3})-(\d{2})";
+        public static string CPFUnformatted => @"(\d{3})(\d{3})(\d{3})(\d{2})";
+        public static string CPFDigitsOnly => @"^\d{11}$";
+
+        public static string CNPJ => @"(\d{2})[.](\d{3})[.](\d{3})\/(\d{4})-(\d{2})";
+        public static string CNPJUnformatted => @"(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})";
+        public static string CNPJDigitsOnly => @"^\d{14}$";
+
+        public static string TituloEleitoral => @"(\d{10})/(\d{2})";
+        public static string TituloEleitoralUnformatted => @"(\d{10})(\d{2})";
+        public static string TituloEleitoralDigitsOnly => @"^\d{12}$";
+
+        public static string CEP => @"(\d{5})-(\d{3})";
+        public static string CEPUnformatted => @"(\d{5})(\d{3})";
+        public static string CEPDigitsOnly => @"^\d{8}$";
 
 

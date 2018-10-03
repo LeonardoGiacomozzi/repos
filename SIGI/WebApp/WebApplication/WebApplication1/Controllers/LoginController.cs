@@ -25,11 +25,18 @@ namespace SIGI.Controllers
             if (usuarioBanco != null) 
             {
                 Session["UsuarioLogado"] = usuarioBanco;
-                return RedirectToAction("Index", "Endereco");
+                return RedirectToAction("Index", "Localidade");
             }
             return RedirectToAction("Index");
 
 
+        }
+
+        public ActionResult Sair() {
+
+            Session["UsuarioLogado"] = null;
+
+            return RedirectToAction("Index");
         }
 
 
