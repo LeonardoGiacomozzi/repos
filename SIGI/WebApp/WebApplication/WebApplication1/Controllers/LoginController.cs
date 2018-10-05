@@ -25,7 +25,7 @@ namespace SIGI.Controllers
             if (usuarioBanco != null) 
             {
                 Session["UsuarioLogado"] = usuarioBanco;
-                return RedirectToAction("Index", "Localidade");
+                return RedirectToAction("Index", "DashBoard");
             }
             return RedirectToAction("Index");
 

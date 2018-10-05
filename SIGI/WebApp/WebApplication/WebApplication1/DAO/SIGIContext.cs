@@ -1,8 +1,6 @@
 ﻿using SIGI.Models.CadastroEndereco;
 using System.Data.Entity;
 using SIGI.Models.CadastroImovel;
-using SIGI.Models.CadastroImovel.ListaDetalhes;
-using SIGI.Models.CadastroImovel.Caracteristicas;
 using SIGI.Models.Usuarios;
 using SIGI.Models.CadastroImovel.Valores;
 using SIGI.Models.Pessoas;
@@ -24,15 +22,9 @@ namespace SIGI.DAO
         public DbSet<Endereco> Enderecos { get; set; }
 
         //CADASTRO DE IMÓVEIS
-
-        public DbSet<Crm> CRM{ get; set; }
-        public DbSet<Detalhes> Detalhes{ get; set; }
-        
-        public DbSet<CaracteristicaPrincipal> CaracteristicaPrincipal{ get; set; }
-        public DbSet<CaracteristicasGerais> CaracteristicasGerais { get; set; }
         public DbSet<Valor> ValorVenda { get; set; }
         public DbSet<Imovel> Imovel { get;  set; }
-        public DbSet<CodigoIntegracao> CodigoIntegracao { get; set; }
+       
         public DbSet<Atendimento> Atendimento { get; set; }
 
         //USUARIO

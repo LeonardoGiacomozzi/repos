@@ -9,7 +9,6 @@ $("#bot-categoria").click(function (event) {
     divValor.attr("style", "display: none;");
     var divDetalhe = $("#div-detalhes");
     divDetalhe.attr("style", "display: none;");
-    var divCrm = $("#div-crm");
-    divCrm.attr("style", "display: none;");
+    
  });
 

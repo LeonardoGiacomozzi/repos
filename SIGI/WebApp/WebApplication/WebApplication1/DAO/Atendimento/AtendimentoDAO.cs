@@ -1,5 +1,6 @@
 ﻿using SIGI.DAO.CadastroPesoa;
 using SIGI.Models.Atendimentos;
+using SIGI.Models.Pessoas;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -78,7 +79,7 @@ namespace SIGI.DAO.Atendimentos
                 atendimentoBanco.FuncionarioID = (atendimento.FuncionarioID!=0? atendimento.FuncionarioID: atendimentoBanco.FuncionarioID);
                 atendimentoBanco.Relatorio = (atendimento.Relatorio!=null? atendimento.Relatorio: atendimentoBanco.Relatorio);
                 atendimentoBanco.Nome = (atendimento.Nome!=null? atendimento.Nome: atendimentoBanco.Nome);
-                atendimentoBanco.Resultado = atendimentoBanco.Resultado;
+                atendimentoBanco.Resultado = atendimento.Resultado;
 
                 context.SaveChanges();
             }
@@ -105,5 +106,76 @@ namespace SIGI.DAO.Atendimentos
 
             }
         }
+
+        public IList<Atendimento> ListaPorResultado(EResultado resutado)
+        {
+            IList<Atendimento> nova = new List<Atendimento>();
+            var lista = Listar();
+
+            foreach (var atendimento in lista)
+            {
+                if (atendimento.Resultado==resutado)
+                {
+                    nova.Add(atendimento);
+                }
+            }
+
+
+            return nova;
+        }
+
+        public IList<Atendimento> ListaPorFuncionario(Pessoa pessoa)
+        {
+            IList<Atendimento> nova = new List<Atendimento>();
+            var lista = Listar();
+
+            foreach (var atendimento in lista)
+            {
+                if (atendimento.Funcionario == pessoa)
+                {
+                    nova.Add(atendimento);
+                }
+            }
+
+
+            return nova;
+        }
+
+        public IList<Atendimento> ListaPorCliente(Pessoa pessoa)
+        {
+            IList<Atendimento> nova = new List<Atendimento>();
+            var lista = Listar();
+
+            foreach (var atendimento in lista)
+            {
+                if (atendimento.Cliente == pessoa)
+                {
+                    nova.Add(atendimento);
+                }
+            }
+
+
+            return nova;
+        }
+
+        public List<Atendimento> ListaPorData(int total)
+        {
+            List<Atendimento> nova = new List<Atendimento>();
+            var lista = Listar();
+            total = 0 - total;
+            foreach (var atendimento in lista)
+            {
+                if (atendimento.DataAtendimento>DateTime.Now.AddMonths(total))
+                {
+                    nova.Add(atendimento);
+                }
+            }
+
+            
+
+            return nova;
+        }
+
+
     }
 }

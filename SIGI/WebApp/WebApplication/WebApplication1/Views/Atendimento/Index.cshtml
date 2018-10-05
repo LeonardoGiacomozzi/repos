@@ -4,10 +4,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 <h2>Histórico</h2>
 <div class="row">
     <div class="col-md-8">
-    <!-- BEGIN SAMPLE TABLE PORTLET-->
+        <!-- BEGIN SAMPLE TABLE PORTLET-->
         <div class="portlet box red">
             <div class="portlet-title">
                 <div class="caption" col-md-12>
@@ -21,11 +22,11 @@
             </div>
             <div class="portlet-body col-md-12">
 
-                 <div class="table-scrollable">
-                    <table id="gridPaises" class="table table-hover">
+                <div class="table-scrollable">
+                    <table id="gridAtendimento" class="table table-hover">
                         <thead class="">
                             <tr>
-                                @*<th class="col-md-1">#</th>*@
+                                <th class="col-md-1">#</th>
                                 <th class="col-md-1">Id</th>
                                 <th class="col-md-3 col-md-offset-8">Nome</th>
                                 <th class="col-md-1 col-md-offset-8">Funcionario</th>
@@ -41,8 +42,23 @@
                         <tbody class="">
                             @foreach (var atendimento in ViewBag.atendimentos)
                             {
+
                                 <tr>
-                                   
+                                    <td class="atendimento@(atendimento.ID)">
+                                        <a href="@Url.Action("Remover","Atendimento", new { id = atendimento.ID})" title="Remover" class="botao-remove-atendimento"><i class="fa fa-minus-circle font-red"></i></a>
+                                        <a href="@Url.Action("Editar","Atendimento", new { id = atendimento.ID})" title="Editar" class="botao-edita-atendimento"><i class="fa fa-edit font-blue"></i></a>
+                                        
+                                        @if (atendimento.Resultado== ViewBag.pendente)
+                                        {
+                                            <a href="@Url.Action("Converter","Atendimento", new { id = atendimento.ID})" title="Converter" class="botao-converte-atendimento"><i class="fa fa-thumbs-up font-green"></i></a>
+                                            <a href="@Url.Action("NaoConverter","Atendimento", new { id = atendimento.ID})" title="Finalizar sem Converter" class="botao-naoconverte-atendimento"><i class="fa fa-thumbs-down font-red"></i></a>
+                                        }else if (atendimento.Resultado == ViewBag.convertido)
+                                        {
+		                                    <a href="@Url.Action("Cadastro","Imoveis", new { id = atendimento.ID })" title="Gerar Contrato" class="botao-contrato-atendimento"><i class="fa fa-file-pdf-o font-yellow-gold"></i></a>
+	                                    }
+                                            
+                                        
+                                    </td>
                                     <td class="atendimento@(atendimento.ID)">@atendimento.ID</td>
                                     <td class="atendimento@(atendimento.ID)">@atendimento.Nome</td>
                                     <td class="atendimento@(atendimento.ID)">@atendimento.Funcionario</td>
@@ -50,7 +66,7 @@
                                     <td class="atendimento@(atendimento.ID)">@atendimento.DataAtendimento.ToString("dd/MM/yyyy")</td>
                                     <td class="atendimento@(atendimento.ID)">@atendimento.Relatorio</td>
                                     <td class="atendimento@(atendimento.ID)">@atendimento.Resultado</td>
-                                    
+
 
                                 </tr>
                             }

@@ -52,6 +52,15 @@ License: You must have a valid license purchased only from themeforest(the above
     <link href="~/content/global/css/plugins.css" rel="stylesheet" type="text/css" />
     <link href="~/content/assets/css/layout.css" rel="stylesheet" type="text/css" />
     <link id="style_color" href="~/content/assets/css/themes/grey.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css" />
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/pie.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+
     @*<link href="~/content/assets/custom.css" rel="stylesheet" type="text/css" />*@
     <!-- END THEME STYLES -->
     <link rel="shortcut icon" href="favicon.ico" />
@@ -88,20 +97,17 @@ License: You must have a valid license purchased only from themeforest(the above
             <!-- END RESPONSIVE MENU TOGGLER -->
             <!-- BEGIN PAGE ACTIONS -->
             <!-- DOC: Remove "hide" class to enable the page header actions -->
-            
-                
             <!-- END PAGE ACTIONS -->
             <!-- BEGIN PAGE TOP -->
             <div class="page-top">
                 <!-- BEGIN HEADER SEARCH BOX -->
                 <!-- DOC: Apply "search-form-expanded" right after the "search-form" class to have half expanded search box -->
-                
                 <!-- END HEADER SEARCH BOX -->
                 <!-- BEGIN TOP NAVIGATION MENU -->
                 <div class="top-menu">
                     <ul class="nav navbar-nav pull-right">
-                       
-                       
+
+
                         <!-- BEGIN USER LOGIN DROPDOWN -->
                         <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                         <li class="dropdown dropdown-user">
@@ -113,7 +119,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <i class="fa fa-angle-down"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-default">
-                               
+
                                 <li>
                                     <a href="@Url.Action("Sair","Login")">
                                         <i class="icon-key"></i> Log Out
@@ -150,7 +156,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
                     <ul class="page-sidebar-menu page-sidebar-menu-hover-submenu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
                         <li class="start ">
-                            <a href="@Url.Action("Index","Localidade")">
+                            <a href="@Url.Action("Index","DashBoard")">
                                 <i class="fa fa-dashboard"></i>
                                 <span class="title">SIGI</span>
                             </a>
@@ -165,7 +171,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <li>
                                     <a href="@Url.Action("Index","Pessoa")">
                                         <i class="icon-home"></i>
-                                       Cliente
+                                        Cliente
                                     </a>
                                 </li>
                                 <li>
@@ -174,7 +180,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                         Usuario
                                     </a>
                                 </li>
-                               </ul>
+                            </ul>
                         </li>
                         <li class="active open">
                             <a href="javascript:;">
@@ -185,16 +191,16 @@ License: You must have a valid license purchased only from themeforest(the above
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="@Url.Action("Cadastro","Imoveis")">
-                                       Cadastrar
+                                    <a href="@Url.Action("Cadastro","Imoveis", new { id = 0 })">
+                                        Cadastrar
                                     </a>
                                 </li>
                                 <li>
                                     <a href="@Url.Action("Index","Imoveis")">
-                                       Visualizar
+                                        Visualizar
                                     </a>
                                 </li>
-                              </ul>
+                            </ul>
                         </li>
                         <li>
                             <a href="javascript:;">
@@ -205,7 +211,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <ul class="sub-menu">
                                 <li>
                                     <a href="@Url.Action("Criar","Atendimento")">
-                                       Novo
+                                        Novo
                                     </a>
                                 </li>
                                 <li>
@@ -215,30 +221,30 @@ License: You must have a valid license purchased only from themeforest(the above
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="javascript:;">
-                                <i class="fa fa-file-pdf-o"></i>
-                                <span class="title">Contratos</span>
-                                <span class="arrow "></span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="components_pickers.html">
-                                       Cadastrar
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="components_context_menu.html">
-                                        Editar
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="components_dropdowns.html">
-                                        Gerar
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                        @*<li>
+                                <a href="javascript:;">
+                                    <i class="fa fa-file-pdf-o"></i>
+                                    <span class="title">Contratos</span>
+                                    <span class="arrow "></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="components_pickers.html">
+                                           Cadastrar
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="components_context_menu.html">
+                                            Editar
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="components_dropdowns.html">
+                                            Gerar
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>*@
                         <li>
                             <a href="javascript:;">
                                 <i class="fa fa-plus-square"></i>
@@ -247,19 +253,14 @@ License: You must have a valid license purchased only from themeforest(the above
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="@Url.Action("Index","Caracteristicas")">
-                                       Cadastro de Caracteristicas
-                                    </a>
-                                </li>
-                                <li>
                                     <a href="@Url.Action("Index","Localidade")">
-                                       Cadastro de Endereço
+                                        Cadastro de Endereço
                                     </a>
                                 </li>
-                               
+
                             </ul>
-                      </li>
-                     </ul>
+                        </li>
+                    </ul>
                     <!-- END SIDEBAR MENU -->
                 </div>
             </div>
@@ -287,11 +288,11 @@ License: You must have a valid license purchased only from themeforest(the above
     <![endif]-->
 
     <script>
-      $(document).ready(function() {
+        $(document).ready(function () {
             Metronic.init(); // init metronic core components
             Layout.init(); // init current layout
             Demo.init(); // init demo features
-      });
+        });
     </script>
     <!-- END JAVASCRIPTS -->
 </body>

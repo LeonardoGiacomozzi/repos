@@ -9,7 +9,7 @@
         <div class="portlet box purple">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-gift"></i>Cadastro de Pessoa Juridica
+                    <i class="fa fa-gift"></i>Cadastro de Imóvel
                 </div>
             </div>
             <div class="portlet-body form">
@@ -18,6 +18,7 @@
                     <div class="form-body">
                         <div class="form-group">
                             <input class="id-secreto" style="display:none;" name="imovel.ID">
+                            <input class="AtendimetoId-secreto" style="display:none;" name="imovel.AtendimentoID" value="@ViewBag.atendimento">
                             <label class="control-label">Codigo Interno</label>
                             <input type="text" name="imovel.Codigo" class="form-control cdg-alterar" placeholder="Codigo Interno">
                             <label class="control-label">Descrição Breve</label>
@@ -25,7 +26,8 @@
                             <label class="control-label">Descrição Completa</label>
                             <textarea name="imovel.DescricaoCompleta" class="form-control db-alterar" placeholder="Descricao Breve"></textarea>
                             <label class="control-label">Tipo De Negocio</label>
-                            <select name="imovel.TipoNegocio" class="negocio-alterar">
+                            <select name="imovel.TipoNegocio" class="negocio-alterar"
+                                    id="FinalidadeDeNegocio">
                                 @foreach (var tipo in ViewBag.tipoNegocio)
                                 {
                                     <option value="@tipo">
@@ -70,90 +72,47 @@
                                 }
 
                             </select><br><br>
-                            <label class="control-label">Codigo De Integração</label><br>
-                            <label class="control-label">Origem</label>
-                            <input type="text" name="imovel.CdgIntegracao.Origem" class="form-control cdgO-alterar" placeholder="Origem do Codigo">
-                            <label class="control-label">Codigo</label>
-                            <input type="text" name="imovel.CdgIntegracao.Codigo" class="form-control cdg-alterar" placeholder="Codigo">
-                            <label class="control-label">Área Útil</label>
                             <input type="number" name="imovel.MetragemUtil" class="form-control mu-alterar" placeholder="Area Útil">
                             <label class="control-label">Área Total</label>
                             <input type="number" name="imovel.MetragemTotal" class="form-control met-alterar" placeholder="Área Total">
-                            <ul id="cadastro-imovel">
-                                <li>
-                                    <a href="#" id="bot-categoria">Caracteristicas</a>
-                                    <div id="div-categoria" style="display:none;">
+                            <h4>Cadastro de Caracteristica</h4>
+                            <div class="form-group">
+                                <label class="control-label">Caracteristicas</label><br>
+                                <textarea name="imovel.Caracteristicas" style="width:90%; height:100px;"></textarea>
+                               
+                            </div>
 
-                                        <h4>Cadastro de Categoria</h4>
-                                        <div class="form-group">
-                                            <label class="control-label">Nome</label>
-                                            <input type="text" name="caracteristica.Nome" class="form-control nome-alterar-p" placeholder="Nome da Categoria">
-                                            <label class="control-label">Tipo de dado</label>
-                                            <select name="caracteristica.TipoDeDado" class="tipo-alterar-p">
-                                                @foreach (var item in ViewBag.tipoDado)
-                                                {
-
-                                                    <option value="@item">
-                                                        @item
-                                                    </option>
-
-                                                }
-
-                                            </select><br>
-                                            <label class="control-label">Valor</label>
-                                            <input type="text" name="caracteristica.Valor" class="form-control valor-alterar-p" placeholder="Valor da Categoria">
-
-                                        </div>
-
-                                    </div>
-                                </li>
-                                <li>
-                                    <a href="#" id="bot-valores">Valor</a>
-                                    <div id="div-valor" style="display:none;">
-                                        <div class="form-group">
-                                            <div id="venda">
-                                                <h4>Cadastro de Valores Referentes a venda</h4>
-                                                <label class="control-label venda">Valor de Venda</label>
-                                                <input type="number" name="imovel.Valor.ValorDeVenda" class="form-control valorVenda-alterar venda" placeholder="Valor do imovel">
-                                                <label class="control-label venda">Pode Ser Financiado</label>
-                                                <input type="checkbox" name="imovel.Valor.PodeFinanciar" class="podeFinanc-alterar venda">
-                                                <label class="control-label venda">Está Escriturado</label>
-                                                <input type="checkbox" name="imovel.Valor.EstaEsscriturado" class="escritura-alterar venda">
-                                                <label class="control-label venda">Está Averbado</label>
-                                                <input type="checkbox" name="imovel.Valor.EstaAverbado" class="averbado-alterar venda">
-                                                <label class="control-label locacao">Valor da Mensalidade</label>
-                                                <input type="number" name="imovel.Valor.Mensalidade" class="form-control valormensalidade-alterar locacao" placeholder="Valor do imovel">
-                                                <label class="control-label locacao">Condominio</label>
-                                                <input type="number" name="imovel.Valor.Condominio" class="condominio-alterar locacao">
-                                                <label class="control-label locacao">IPTU</label>
-                                                <input type="number" name="imovel.Valor.IPTU" class="form-control iptu-alterar locacao">
-                                                <label class="control-label ">Descricao de Pagamento</label>
-                                                <textarea type="text" name="imovel.Valor.DescricaoPagamento" class="valor-alterar-p" placeholder="Valor da Categoria"></textarea>
-                                              
-                                            </div>
-
-
-
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a href="#" id="bot-detalhe">Detalhes</a>
-                                    <div id="div-detalhes" style="display:none;">
-                                        <label class="control-label">Descrição de Detalhes</label>
-                                        <textarea name="imovel.Detalhes.Descricao"></textarea>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a href="#" id="bot-crm">CRM</a>
-                                    <div id="div-crm" style="display:none;">
-                                        <label class="control-label">Descrição</label>
-                                        <textarea name="imovel.Crm.Descricao"></textarea>
-                                    </div>
-                                </li>
-                            </ul>
                         </div>
+                        <div class="form-group">
+                            <div id="venda">
+                                <h4>Cadastro de Valores </h4>
+                                <label class="control-label venda">Valor de Venda</label>
+                                <input type="number" name="imovel.Valor.ValorDeVenda" class="form-control valorVenda-alterar venda" placeholder="Valor do imovel">
+                                <div style="display:none;"
+                                     class="venda">
+                                    <label class="control-label venda">Pode Ser Financiado</label>
+                                    <input type="checkbox" name="imovel.Valor.PodeFinanciar" class="podeFinanc-alterar venda" value="true" style="visibility:hidden;">
+                                    <label class="control-label venda">Está Escriturado</label>
+                                    <input type="checkbox" name="imovel.Valor.EstaEsscriturado" class="escritura-alterar venda" value="true">
+                                    <label class="control-label venda">Está Averbado</label>
+                                    <input type="checkbox" name="imovel.Valor.EstaAverbado" class="averbado-alterar venda" value="true">
+                                </div>
+                                <label class="control-label locacao">Valor da Mensalidade</label>
+                                <input type="number" name="imovel.Valor.Mensalidade" class="form-control valormensalidade-alterar locacao" placeholder="Valor do imovel">
+                                <label class="control-label locacao">Condominio</label>
+                                <input type="number" name="imovel.Valor.Condominio" class="condominio-alterar locacao"><br>
+                                <label class="control-label locacao">IPTU</label>
+                                <input type="number" name="imovel.Valor.IPTU" class="form-control iptu-alterar locacao">
+                                <label class="control-label ">Descricao de Pagamento</label>
+                                <textarea type="text" name="imovel.Valor.DescricaoPagamento" class="valor-alterar-p" style="width:90%; height:100px;"></textarea>
+                            </div>
+                            <h4>Cadastro de Detalhes </h4>
+                            <label class="control-label">Descrição de Detalhes</label>
+                            <textarea name="imovel.Detalhes" style="width:90%; height:100px;"></textarea>
+                        </div>
+
                     </div>
+
                     <div class="form-actions right">
                         <button type="submit" class="btn green">Salvar</button>
                     </div>

@@ -1,10 +1,8 @@
-﻿using System.Collections.Generic;
-using SIGI.Models.Pessoas;
+﻿using SIGI.Models.Pessoas;
 
-using SIGI.Models.CadastroImovel.ListaDetalhes;
-using SIGI.Models.CadastroImovel.Caracteristicas;
 using SIGI.Models.CadastroEndereco;
 using SIGI.Models.CadastroImovel.Valores;
+using SIGI.Models.Atendimentos;
 
 namespace SIGI.Models.CadastroImovel
 {
@@ -22,17 +20,18 @@ namespace SIGI.Models.CadastroImovel
         public int ResponsavelID { get; set; }
         public Pessoa Responsavel { get; set; }
         public int CdgIntegracaoID { get; set; }
-        public CodigoIntegracao CdgIntegracao { get; set; }
+
         public double MetragemUtil { get; set; }
         public double MetragemTotal{ get; set; }
-        public IList<CaracteristicaPrincipal> CaracteristicasPrincipais { get; set; }
-        public IList<CaracteristicasGerais> CaracteristicasGerais { get; set; }
+        public string CaracteristicasPrincipais { get; set; }
+        public string CaracteristicasGerais { get; set; }
         public int ValorID{ get; set; }
         public Valor Valor { get; set; }
-        public int DetalhesID { get; set; }
-        public Detalhes Detalhes { get; set; }
+        public int AtendimentoID { get; set; }
+        public Atendimento Atendimento { get; set; }
+        public string Detalhes { get; set; }
         
-        public IList<Crm> Crm { get; set; }
+        //public IList<Crm> Crm { get; set; }
        
     }
 }

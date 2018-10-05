@@ -24,9 +24,8 @@ namespace SIGI.Controllers
             }
             else
             {
-                Estado Estado = estadoDAO.BuscarPorId(estado.Id);
-                Estado.Nome = (estado.Nome != null ? estado.Nome : Estado.Nome);
-                estadoDAO.Alterar(Estado);
+                
+                estadoDAO.Alterar(estado);
             }
 
             return RedirectToAction("Index", "Localidade");

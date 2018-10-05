@@ -572,13 +572,10 @@ D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\bin\System.Web.WebPage
 D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\bin\System.Web.Razor.dll
 D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\bin\WebGrease.dll
 D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\bin\System.Web.WebPages.Deployment.dll
-D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\WebApplication1.Migrations.inicial.resources
-D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\WebApplication1.Migrations.tituloAtendimento.resources
-D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\WebApplication1.Migrations.ajustandoAtendimento.resources
-D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\WebApplication1.Migrations.ajusteImovel.resources
-D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\WebApplication1.Migrations.ajusteImovel1.resources
-D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\SIGI.csproj.GenerateResource.cache
+D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\SIGI.csprojAssemblyReference.cache
 D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\SIGI.csproj.CoreCompileInputs.cache
 D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\SIGI.csproj.CopyComplete
 D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\SIGI.dll
 D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\SIGI.pdb
+D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\WebApplication1.Migrations.inicial.resources
+D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\SIGI.csproj.GenerateResource.cache

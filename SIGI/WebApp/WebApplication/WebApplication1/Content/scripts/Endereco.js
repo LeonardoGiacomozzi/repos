@@ -1,6 +1,6 @@
 ﻿$('#gridEndereco.table tbody tr').dblclick(function () {
     console.log("aa");
-    var formulario = $("#form-cadastro-endereco");
+    var formulario = $("#form-cadastro-localidade");
     var ide = $(this).attr('data-id');
     var rua = $(this).attr('data-rua');
     var bairro = $(this).attr('data-bairro');
@@ -28,7 +28,7 @@
 $("#botao-add-endereco").click(function () {
     console.log("a")
 
-    var formulario = $("#form-cadastro-endereco");
+    var formulario = $("#form-cadastro-localidade");
 
     formulario.find(".id-secreto").val(0);
     formulario.find(".rua-alterar").val(null);

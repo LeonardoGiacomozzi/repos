@@ -23,16 +23,15 @@ namespace SIGI.Controllers
             return View();
         }
 
-        public ActionResult Cadastro() {
+        public ActionResult Cadastro(int id) {
 
+            ViewBag.atendimento = id;
             ViewBag.tipoNegocio = new ImovelDAO().ListaTipoNegocio();
             ViewBag.tipoDeImovel= new ImovelDAO().ListaTipoImovel();
             ViewBag.finalidade= new ImovelDAO().ListaFinalidadeNegocio();
             ViewBag.enderecos = new EnderecoDAO().ListarFullProperties();
             ViewBag.Pessoa = new PessoaDAO().ListaPorFuncao(ETipoPessoa.Cliente);
-            ViewBag.caracteristicasP = new CaracteristicasPricipaisDAO().ListarAtivos();
-            ViewBag.caracteristicasG = new CaracteristicaGeralDAO().ListarAtivos();
-            ViewBag.tipoDado = new CaracteristicasPricipaisDAO().listaTipo();
+          
             return View();
         }
 
@@ -40,23 +39,39 @@ namespace SIGI.Controllers
         {
             var imovel = new ImovelDAO().BuscarPorId(id);
             ViewBag.imovel = new ImovelDAO().GetFullPropriety(imovel);
+            ViewBag.valor = new ValorVendaDAO().BuscarPorId(imovel.ValorID); 
             ViewBag.tipoNegocio = new ImovelDAO().ListaTipoNegocio();
             ViewBag.tipoDeImovel = new ImovelDAO().ListaTipoImovel();
             ViewBag.finalidade = new ImovelDAO().ListaFinalidadeNegocio();
             ViewBag.enderecos = new EnderecoDAO().ListarFullProperties();
-            ViewBag.Pf = new PessoaDAO().ListarFullProperties();
+            ViewBag.Pessoa = new PessoaDAO().ListaPorFuncao(ETipoPessoa.Cliente);
          
             return View();
         }
 
         public ActionResult Adiciona(Imovel imovel) {
 
+            if (imovel.ID==0)
+            {
+              
+              
 
+                imovel.Valor.Tipo = imovel.TipoNegocio;
 
-            new CdgIntegracaoDAO().Adiciona(imovel.CdgIntegracao);
-            var codigo = new CdgIntegracaoDAO().BuscarPorCDG(imovel.CdgIntegracao.Codigo);
-            imovel.CdgIntegracaoID = codigo.ID;
-            new ImovelDAO().Adiciona(imovel);
+                new ImovelDAO().Adiciona(imovel);
+
+            }
+            else
+            {
+                imovel.Valor.Tipo = imovel.TipoNegocio;
+                new ImovelDAO().Alterar(imovel);
+            }
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Remover(int id) {
+
+            new ImovelDAO().Deletar(id);
 
             return RedirectToAction("Index");
         }

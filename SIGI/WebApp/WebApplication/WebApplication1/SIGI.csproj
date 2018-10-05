@@ -52,8 +52,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AtendimentoController.cs" />
-    <Compile Include="Controllers\CaracteristicasController.cs" />
     <Compile Include="Controllers\CidadeController.cs" />
+    <Compile Include="Controllers\DashBoardController.cs" />
     <Compile Include="Controllers\EnderecoController.cs" />
     <Compile Include="Controllers\EstadoController.cs" />
     <Compile Include="Controllers\ImoveisController.cs" />
@@ -65,41 +65,19 @@
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\ValorVendaController.cs" />
     <Compile Include="DAO\Atendimento\AtendimentoDAO.cs" />
-    <Compile Include="DAO\CadastroImoveis\CaracteristicaGeralDAO.cs" />
-    <Compile Include="DAO\CadastroImoveis\CaracteristicaPricipalDAO.cs" />
-    <Compile Include="DAO\CadastroImoveis\CdgIntegracaoDAO.cs" />
     <Compile Include="DAO\CadastroImoveis\ImovelDAO.cs" />
-    <Compile Include="DAO\CadastroImoveis\CRMDAO.cs" />
-    <Compile Include="DAO\CadastroImoveis\DescricaoDAO.cs" />
     <Compile Include="DAO\CadastroImoveis\ValorVendaDAO.cs" />
     <Compile Include="DAO\CadastroPesoa\PessoaDAO.cs" />
     <Compile Include="DAO\CidadeDAO.cs" />
-    <Compile Include="DAO\DetalhesDAO.cs" />
     <Compile Include="DAO\EnderecoDAO.cs" />
     <Compile Include="DAO\EstadoDAO.cs" />
     <Compile Include="DAO\PaisesDAO.cs" />
     <Compile Include="DAO\Usuarios\UsuarioDAO.cs" />
     <Compile Include="Filtros\AutorizaFiltroAtribute.cs" />
     <Compile Include="Filtros\FiltroAdmAtribute.cs" />
-    <Compile Include="Migrations\201810012023169_inicial.cs" />
-    <Compile Include="Migrations\201810012023169_inicial.Designer.cs">
-      <DependentUpon>201810012023169_inicial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810012323441_tituloAtendimento.cs" />
-    <Compile Include="Migrations\201810012323441_tituloAtendimento.Designer.cs">
-      <DependentUpon>201810012323441_tituloAtendimento.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810021333391_ajustandoAtendimento.cs" />
-    <Compile Include="Migrations\201810021333391_ajustandoAtendimento.Designer.cs">
-      <DependentUpon>201810021333391_ajustandoAtendimento.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810031117576_ajusteImovel.cs" />
-    <Compile Include="Migrations\201810031117576_ajusteImovel.Designer.cs">
-      <DependentUpon>201810031117576_ajusteImovel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810031413088_ajusteImovel1.cs" />
-    <Compile Include="Migrations\201810031413088_ajusteImovel1.Designer.cs">
-      <DependentUpon>201810031413088_ajusteImovel1.cs</DependentUpon>
+    <Compile Include="Migrations\201810042215517_inicial.cs" />
+    <Compile Include="Migrations\201810042215517_inicial.Designer.cs">
+      <DependentUpon>201810042215517_inicial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Atendimentos\Atendimento.cs" />
@@ -111,13 +89,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\CadastroImovel\Caracteristicas\CaracteristicaPrincipal.cs" />
-    <Compile Include="Models\CadastroImovel\Caracteristicas\CaracteristicasGerais.cs" />
-    <Compile Include="Models\CadastroImovel\Caracteristicas\ETipoDeDado.cs" />
-    <Compile Include="Models\CadastroImovel\Caracteristicas\ICaracteristica.cs" />
-    <Compile Include="Models\CadastroImovel\CodigoIntegracao.cs" />
-    <Compile Include="Models\CadastroImovel\CRM\Crm.cs" />
-    <Compile Include="Models\CadastroImovel\DetalhesFolder\Detalhes.cs" />
     <Compile Include="Models\CadastroImovel\EFinalidadeImovel.cs" />
     <Compile Include="Models\CadastroImovel\EtipoDeImovel.cs" />
     <Compile Include="Models\CadastroImovel\ETipoNegocio.cs" />
@@ -129,6 +100,9 @@
     <Compile Include="Models\CadastroPessoa\Pessoa.cs" />
     <Compile Include="Models\CadastroPessoa\EEstadoCivil.cs" />
     <Compile Include="Models\CadastroPessoa\ETipoPessoa.cs" />
+    <Compile Include="Models\DashBoardInfos.cs" />
+    <Compile Include="Models\PizzaFuncionarioInfo.cs" />
+    <Compile Include="Models\StatusConversaoAtendimento.cs" />
     <Compile Include="Models\Usuarios\EStatus.cs" />
     <Compile Include="Models\Usuarios\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -575,9 +549,11 @@
     <Content Include="content\global\scripts\datatable.js" />
     <Content Include="content\global\scripts\metronic.js" />
     <Content Include="content\MeuCss.css" />
+    <Content Include="content\scripts\AtendimentoBotaoIndex.js" />
     <Content Include="content\scripts\AtendimentoSimples.js" />
     <Content Include="content\scripts\CEP.js" />
     <Content Include="content\scripts\Caracteristicas.js" />
+    <Content Include="content\scripts\ImovelAlterar.js" />
     <Content Include="content\scripts\ImovelCaracteristica.js" />
     <Content Include="content\scripts\ImovelCrm.js" />
     <Content Include="content\scripts\ImovelDetalhe.js" />
@@ -710,7 +686,8 @@
     <Content Include="Views\Imoveis\Cadastro.cshtml" />
     <Content Include="Views\Atendimento\Criar.cshtml" />
     <Content Include="Views\Atendimento\Index.cshtml" />
-    <Content Include="Views\Caracteristicas\Index.cshtml" />
+    <Content Include="Views\DashBoard\Index.cshtml" />
+    <Content Include="Views\Atendimento\Editar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -725,23 +702,6 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201810012023169_inicial.resx">
-      <DependentUpon>201810012023169_inicial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810012323441_tituloAtendimento.resx">
-      <DependentUpon>201810012323441_tituloAtendimento.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810021333391_ajustandoAtendimento.resx">
-      <DependentUpon>201810021333391_ajustandoAtendimento.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810031117576_ajusteImovel.resx">
-      <DependentUpon>201810031117576_ajusteImovel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810031413088_ajusteImovel1.resx">
-      <DependentUpon>201810031413088_ajusteImovel1.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
@@ -872,6 +832,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\System.Web.Optimization.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201810042215517_inicial.resx">
+      <DependentUpon>201810042215517_inicial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

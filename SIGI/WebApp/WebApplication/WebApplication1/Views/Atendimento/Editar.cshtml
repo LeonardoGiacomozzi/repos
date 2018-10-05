@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Criar";
+    ViewBag.Title = "Editar";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -11,18 +11,19 @@
         <div class="portlet box purple">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-gift"></i>Novo
+                    <i class="fa fa-gift"></i>Editar
                 </div>
             </div>
             <div class="portlet-body form">
 
-                <form id="form-cadastro-atendimento" action="/Atendimento/Adicionar" method="post">
+                <form id="form-editor-atendimento" action="/Atendimento/Adicionar" method="post"
+                      data-funcionario="@ViewBag.atendimento.FuncionarioID" data-cliente="@ViewBag.atendimento.ClienteID">
                     <div class="form-body">
                         <div class="form-group">
-                            <input class="id-secreto" style="display:none;" name="atendimento.ID">
+                            <input class="id-secreto" style="display:none;" name="atendimento.ID" value="@ViewBag.atendimento.ID">
 
                             <label class=" control-label">Titulo Do Atendimento</label>
-                            <input class="titulo-alter" name="atendimento.Nome">
+                            <input class="titulo-alter" name="atendimento.Nome" value="@ViewBag.atendimento.Nome">
                         </div>
                         <div class="form-group">
                             <label class="control-label">Funcionario</label>
@@ -49,9 +50,9 @@
                         </div>
                         <div class="form-group">
                             <label class="control-label">Relatório do atendimento</label>
-                            <textarea name="atendimento.Relatorio" style="width:500px;height:80px;"></textarea>
+                            <textarea name="atendimento.Relatorio" style="width:95%;height:90px;">@ViewBag.atendimento.Relatorio</textarea>
 
-                            <input class="resultado" style="display:none;" name="atendimento.Resultado" value="Pendente">
+                            <input class="resultado" style="display:none;" name="atendimento.Resultado" value="Convertido">
                         </div>
                     </div>
                     <div class="form-actions right">

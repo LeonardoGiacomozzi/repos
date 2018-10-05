@@ -1,11 +1,7 @@
-﻿$("#MudaPendet").click(function () {
+﻿
+var funcionario = $("#form-editor-atendimento").attr('data-funcionario');
+$("#selec-funcionario").val(funcuinario);
 
-    var resultado = $(".resultado");
-    resultado.val("@ViewBag.pendente");
-});
 
-$("#MudaFinalz").click(function () {
-
-    var resultado = $(".resultado");
-    resultado.val("@ViewBag.naoConvertido");
-});
+var cliente = $("#form-editor-atendimento").attr('data-cliente');
+$("#selec-cliente").val(cliente);

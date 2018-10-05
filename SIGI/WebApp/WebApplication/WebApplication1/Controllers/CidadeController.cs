@@ -26,9 +26,8 @@ namespace WebApplication1.Controllers
             }
             else
             {
-                Cidade Cidade = cidadeDAO.BuscarPorId(cidade.ID);
-                Cidade.Nome = (cidade.Nome != null ? cidade.Nome : Cidade.Nome);
-                cidadeDAO.Alterar(Cidade);
+     
+                cidadeDAO.Alterar(cidade);
             }
             return RedirectToAction("Index", "Localidade");
         }

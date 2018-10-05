@@ -10,11 +10,7 @@
             <div class="caption" col-md-12>
                 <i class="fa fa-cogs"></i> Lista Imóveis
             </div>
-            <div class="actions">
-                <a href="javascript:;" class="btn btn-default btn-sm" id="botao-add-pais">
-                    <i class="fa fa-plus"></i> Add
-                </a>
-            </div>
+            
         </div>
         <div class="portlet-body col-md-12">
 
@@ -37,13 +33,14 @@
                         {
                             <tr data-id="@imovel.ID" >
                                 <td class="imovel@(imovel.ID)">
-                                    <a href="@Url.Action("Remover","Imovel", new { id = imovel.ID })" class="botao-remove-imovel"><i class="fa fa-minus-circle font-red"></i></a>
-                                    <a href="@Url.Action("Form","Imovel", new { id = imovel.ID })" class="botao-edita-imovel"><i class="fa fa-edit font-blue"></i></a>
+                                    <a href="@Url.Action("Remover","Imoveis", new { id = imovel.ID })" class="botao-remove-imovel"><i class="fa fa-minus-circle font-red"></i></a>
+                                    <a href="@Url.Action("Form","Imoveis", new { id = imovel.ID })" class="botao-edita-imovel"><i class="fa fa-edit font-blue"></i></a>
                                 </td>
                                 <td class="imovel@(imovel.ID)">@imovel.ID</td>
                                 <td class="imovel@(imovel.ID)">@imovel.CdgIntegracao.Codigo</td>
                                 <td class="imovel@(imovel.ID)">@imovel.DescricaoBreve</td>
                                 <td class="imovel@(imovel.ID)">@imovel.TipoNegocio</td>
+                                <td><a></a></td>
 
                             </tr>
                         }

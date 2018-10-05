@@ -342,53 +342,60 @@
             </div>
         </div>
     </div>
-
-    <div class="col-md-4 " id="alter-localidade">
+    <div class="col-md-4 offset-md-8">
         <div class="portlet box purple">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-gift"></i>Cadastro de Pais
+                    <i class="fa fa-gift"></i>Cadastro de Endereço
                 </div>
             </div>
             <div class="portlet-body form">
 
-                <form id="form-cadastro-endereco" action="/Endereco/Insert" method="post">
+                <form id="form-cadastro-localidade" action="/Endereco/Insert" method="post">
                     <div class="form-body">
-                        <div class="form-group">
-                            <input class="id-secreto" style="display:none;" name="endereco.ID">
-                            <label class="control-label">Rua</label>
-                            <input type="text" name="endereco.Rua" class="form-control rua-alterar" placeholder="Nome da Rua">
-                            <label class="control-label">Bairro</label>
-                            <input type="text" name="endereco.Bairro" class="form-control bairro-alterar" placeholder="Nome do Bairro">
-                            <label class="control-label">Cidade</label>
-                            <select id="endereco-cidade-select" name="endereco.CidadeID">
 
-                                @foreach (var item in ViewBag.cidades)
-                                {
+                        <div class="form-body">
 
-                                    <option value="@item.ID">
-                                        @item.Nome
-                                    </option>
+                            <div class="form-group">
+                                <input class="id-secreto" style="display:none;" name="endereco.ID">
+                                <label class="control-label">Rua</label>
+                                <input type="text" name="endereco.Rua" class="form-control rua-alterar" placeholder="Nome da Rua">
+                                <label class="control-label">Bairro</label>
+                                <input type="text" name="endereco.Bairro" class="form-control bairro-alterar" placeholder="Nome do Bairro">
+                                <label class="control-label">Cidade</label>
 
-                                }
+                            </div>
+                            <div class="form-group">
+                                <select id="endereco-cidade-select" name="endereco.CidadeID">
 
-                            </select>
-                            <label class="control-label">Numero</label>
-                            <input type="text" name="endereco.Numero" class="form-control numero-alterar" placeholder="Nº">
-                            <label class="control-label">CEP</label>
-                            <input type="text" name="endereco.CEP" class="form-control cep-alterar" placeholder="EX 00000-000">
-                            <label class="control-label">Complemento</label>
-                            <input type="text" name="endereco.Complemento" class="form-control complemento-alterar" placeholder="Complemento">
+                                    @foreach (var item in ViewBag.cidades)
+                                    {
+
+                                        <option value="@item.ID">
+                                            @item.Nome
+                                        </option>
+
+                                    }
+
+                                </select><br>
+                                <label class="control-label">Numero</label>
+                                <input type="text" name="endereco.Numero" class="form-control numero-alterar" placeholder="Nº">
+                                <label class="control-label">CEP</label>
+                                <input type="text" name="endereco.CEP" class="form-control cep-alterar" placeholder="EX 00000-000">
+                                <label class="control-label">Complemento</label>
+                                <input type="text" name="endereco.Complemento" class="form-control complemento-alterar" placeholder="Complemento">
+                            </div>
+                            <div class="form-actions right">
+                                <button type="submit" class="btn green">Salvar</button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-actions right">
-                       <button type="submit" class="btn green">Salvar</button>
-                    </div>
+                        </div>
                 </form>
 
             </div>
         </div>
     </div>
+
 </div>
 
 
