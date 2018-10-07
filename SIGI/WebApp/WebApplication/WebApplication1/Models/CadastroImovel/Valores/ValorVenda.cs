@@ -17,5 +17,6 @@ namespace SIGI.Models.CadastroImovel.Valores
         public double Condominio { get; set; }
         public double Mensalidade { get; set; }
         public string DescricaoPagamento { get; set; }
+        public double Comissao { get; set; }
     }
 }

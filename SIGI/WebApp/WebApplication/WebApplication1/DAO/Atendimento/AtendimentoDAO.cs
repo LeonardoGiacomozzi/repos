@@ -175,6 +175,23 @@ namespace SIGI.DAO.Atendimentos
 
             return nova;
         }
+        public List<Atendimento> ListaPorDataSemana(int total)
+        {
+            List<Atendimento> nova = new List<Atendimento>();
+            var lista = Listar();
+            total = 0 - total;
+            foreach (var atendimento in lista)
+            {
+                if (atendimento.DataAtendimento > DateTime.Now.AddDays(total))
+                {
+                    nova.Add(atendimento);
+                }
+            }
+
+
+
+            return nova;
+        }
 
 
     }

@@ -8,6 +8,13 @@ namespace SIGI.Models
     public class PizzaFuncionarioInfo
     {
         public string NomeFuncionario { get; set; }
-        public decimal Percentual { get; set; }
+        public double Percentual { get; set; }
+       
+        public PizzaFuncionarioInfo(string nome,double percentual)
+        {
+
+            this.NomeFuncionario = nome;
+            this.Percentual = percentual;
+        } 
     }
 }

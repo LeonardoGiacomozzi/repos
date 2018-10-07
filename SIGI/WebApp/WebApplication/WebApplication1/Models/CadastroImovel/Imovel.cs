@@ -19,19 +19,17 @@ namespace SIGI.Models.CadastroImovel
         public Endereco Endereco { get; set; }
         public int ResponsavelID { get; set; }
         public Pessoa Responsavel { get; set; }
-        public int CdgIntegracaoID { get; set; }
-
         public double MetragemUtil { get; set; }
         public double MetragemTotal{ get; set; }
-        public string CaracteristicasPrincipais { get; set; }
-        public string CaracteristicasGerais { get; set; }
+        public string Caracteristicas { get; set; }
         public int ValorID{ get; set; }
         public Valor Valor { get; set; }
         public int AtendimentoID { get; set; }
         public Atendimento Atendimento { get; set; }
         public string Detalhes { get; set; }
-        
-        //public IList<Crm> Crm { get; set; }
+
        
+
+
     }
 }

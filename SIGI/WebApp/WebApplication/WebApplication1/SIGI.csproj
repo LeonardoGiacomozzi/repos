@@ -79,6 +79,14 @@
     <Compile Include="Migrations\201810042215517_inicial.Designer.cs">
       <DependentUpon>201810042215517_inicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810051458234_alteracoes.cs" />
+    <Compile Include="Migrations\201810051458234_alteracoes.Designer.cs">
+      <DependentUpon>201810051458234_alteracoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810060019518_ajustandoImovel.cs" />
+    <Compile Include="Migrations\201810060019518_ajustandoImovel.Designer.cs">
+      <DependentUpon>201810060019518_ajustandoImovel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Atendimentos\Atendimento.cs" />
     <Compile Include="Models\Atendimentos\EResultado.cs" />
@@ -553,6 +561,7 @@
     <Content Include="content\scripts\AtendimentoSimples.js" />
     <Content Include="content\scripts\CEP.js" />
     <Content Include="content\scripts\Caracteristicas.js" />
+    <Content Include="content\scripts\DashBoard.js" />
     <Content Include="content\scripts\ImovelAlterar.js" />
     <Content Include="content\scripts\ImovelCaracteristica.js" />
     <Content Include="content\scripts\ImovelCrm.js" />
@@ -836,6 +845,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201810042215517_inicial.resx">
       <DependentUpon>201810042215517_inicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810051458234_alteracoes.resx">
+      <DependentUpon>201810051458234_alteracoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810060019518_ajustandoImovel.resx">
+      <DependentUpon>201810060019518_ajustandoImovel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

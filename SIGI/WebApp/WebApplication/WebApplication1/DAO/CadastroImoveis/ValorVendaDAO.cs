@@ -71,6 +71,7 @@ namespace SIGI.DAO.CadastroImoveis
                     ValorVenda.IPTU = 0;
                     ValorVenda.Mensalidade = 0;
                 }
+                ValorVenda.Comissao = valor.Comissao;
                 context.SaveChanges();
             }
 

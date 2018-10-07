@@ -41,7 +41,7 @@
                             {
                                 <tr data-id="@pessoa.ID" data-nome="@pessoa.Nome" data-cpf="@pessoa.Cpf" data-cnpj="@pessoa.Cnpj" data-tipo="@pessoa.ETipo" data-prof="@pessoa.Profissao"
                                     data-nacionalidade="@pessoa.Nacionalidade" data-im="@pessoa.InscricaoMunicipal" data-ie="@pessoa.InscricaoEstadual" data-rg="@pessoa.Rg"
-                                    data-nacimento="@pessoa.DataNascimento" data-email="@pessoa.EmailPrincipal" data-obs="@pessoa.Observacao" data-endereco="@pessoa.EnderecoID"
+                                    data-email="@pessoa.EmailPrincipal" data-obs="@pessoa.Observacao" data-endereco="@pessoa.EnderecoID"
                                     data-tel="@pessoa.Telefone" data-cell="@pessoa.Celular" data-ec="@pessoa.EEstadoCivil" data-web="@pessoa.WebSite" data-pessoaTipo="@pessoa.TipoPessoa">
                                     <td class="pessoa@(pessoa.ID)">
                                         <a href="@Url.Action("Remover","PessoaFisica", new { id = pessoa.ID })" class="botao-remove-PF"><i class="fa fa-minus-circle font-red"></i></a>
@@ -185,8 +185,7 @@
                                     </option>
                                 }
                             </select><br>
-                            <label class="control-label pessoaFisica" style="display:block;">Data de Nascimento</label>
-                            <input type="date" name="pessoa.DataNascimento" style="display:block;" class="form-control nac-alterar pessoaFisica" placeholder="Web Site da empresa">
+                           
                             <label class="control-label">Email</label>
                             <input type="email" name="pessoa.EmailPrincipal" class="form-control email-alterar" placeholder="exemplo@exwmplo.com">
                             <label class="control-label pessoaJuridica" style="display:none;">Web Site</label>

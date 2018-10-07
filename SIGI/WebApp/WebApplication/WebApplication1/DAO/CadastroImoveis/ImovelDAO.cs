@@ -1,4 +1,5 @@
-﻿using SIGI.Models.CadastroImovel;
+﻿using SIGI.DAO.Atendimentos;
+using SIGI.Models.CadastroImovel;
 
 using System;
 using System.Collections.Generic;
@@ -64,8 +65,8 @@ namespace SIGI.DAO.CadastroImoveis
 
             Imovel imovelnovo = BuscarPorId(imovel.ID);
             imovelnovo.Valor = new ValorVendaDAO().BuscarPorId(imovelnovo.ValorID);
-          
-            
+
+            imovelnovo.Atendimento = new AtendimentoDAO().GetFullProperties(new AtendimentoDAO().BuscarPorId(imovel.AtendimentoID));
             imovelnovo.Endereco = new EnderecoDAO().BuscarPorId(imovelnovo.EnderecoID);
             imovelnovo.Endereco = new EnderecoDAO().GetFullProperties(imovelnovo.Endereco);
          
@@ -86,12 +87,7 @@ namespace SIGI.DAO.CadastroImoveis
                 Imovel imovelDoBanco = context.Imovel.FirstOrDefault(c => c.ID == imovel.ID);
 
          
-                imovelDoBanco.CaracteristicasGerais = (imovel.CaracteristicasGerais != null? imovel.CaracteristicasGerais : imovelDoBanco.CaracteristicasGerais);
-
-                imovelDoBanco.CaracteristicasPrincipais= (imovel.CaracteristicasPrincipais != null? imovel.CaracteristicasPrincipais: imovelDoBanco.CaracteristicasPrincipais);
-
-                //imovelDoBanco.CdgIntegracao = (imovel.CdgIntegracao != null? imovel.CdgIntegracao: imovelDoBanco.CdgIntegracao);
-              
+                imovelDoBanco.Caracteristicas = (imovel.Caracteristicas != null? imovel.Caracteristicas: imovelDoBanco.Caracteristicas);
 
                 imovelDoBanco.TipoNegocio = imovel.TipoNegocio;
 
@@ -135,6 +131,22 @@ namespace SIGI.DAO.CadastroImoveis
                 context.SaveChanges();
 
             }
+        }
+
+        public IList<Imovel> ListarImoveisDeAtendimento()
+        {
+            var imoveis = ListarFullPropriety();
+            var nova = new List<Imovel>();
+            foreach (var imovel in imoveis)
+            {
+                if (imovel.AtendimentoID != 0)
+                {
+                    nova.Add(imovel);
+                }
+            }
+
+            return nova;
+
         }
 
         public IList<ETipoNegocio> ListaTipoNegocio() {

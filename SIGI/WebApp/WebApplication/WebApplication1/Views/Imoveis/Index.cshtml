@@ -20,7 +20,6 @@
                         <tr>
                             <th class="col-md-1">#</th>
                             <th class="col-md-2">Código</th>
-                            <th class="col-md-2">Código De Integração</th>
                             <th class="col-md-3 ">Descrição</th>
                             <th class="col-md-1 col-md-offset-8">Tipo</th>
                             <th class="col-md-10 col-md-offset-12">
@@ -37,7 +36,6 @@
                                     <a href="@Url.Action("Form","Imoveis", new { id = imovel.ID })" class="botao-edita-imovel"><i class="fa fa-edit font-blue"></i></a>
                                 </td>
                                 <td class="imovel@(imovel.ID)">@imovel.ID</td>
-                                <td class="imovel@(imovel.ID)">@imovel.CdgIntegracao.Codigo</td>
                                 <td class="imovel@(imovel.ID)">@imovel.DescricaoBreve</td>
                                 <td class="imovel@(imovel.ID)">@imovel.TipoNegocio</td>
                                 <td><a></a></td>

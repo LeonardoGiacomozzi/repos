@@ -16,7 +16,7 @@ namespace SIGI.DAO.CadastroPesoa
                 {
                     pessoa.TipoPessoa = EPessoa.Pessoa_Juridica;
                     pessoa.Cpf = "";
-                    pessoa.DataNascimento = new DateTime(2013,10 ,1);
+                   
                     pessoa.EEstadoCivil = EEstadoCivil.nullo;
                     pessoa.Nacionalidade = "";
                     pessoa.Profissao = "";
@@ -108,7 +108,6 @@ namespace SIGI.DAO.CadastroPesoa
                 if (pessoa.TipoPessoa==EPessoa.Pessoa_Fisica)
                 {
                     pessoaDoBanco.Cpf= (pessoa.Cpf!= null ? pessoa.Cpf: pessoaDoBanco.Cpf);
-                    pessoaDoBanco.DataNascimento= (pessoa.DataNascimento!= null ? pessoa.DataNascimento: pessoaDoBanco.DataNascimento);
                     pessoaDoBanco.EEstadoCivil = pessoa.EEstadoCivil;
                     pessoaDoBanco.Rg= (pessoa.Rg!= null ? pessoa.Rg: pessoaDoBanco.Rg);
                     pessoaDoBanco.Profissao= (pessoa.Profissao!= null ? pessoa.Profissao: pessoaDoBanco.Profissao);
@@ -124,7 +123,7 @@ namespace SIGI.DAO.CadastroPesoa
                     pessoa.WebSite = (pessoa.WebSite != null ? pessoa.WebSite : pessoaDoBanco.WebSite);
 
                     pessoaDoBanco.Cpf=null;
-                    pessoaDoBanco.DataNascimento = new DateTime(0,0,0);
+                   
                     pessoaDoBanco.EEstadoCivil = EEstadoCivil.nullo;
                     pessoaDoBanco.Rg = null;
                     pessoaDoBanco.Profissao = null;

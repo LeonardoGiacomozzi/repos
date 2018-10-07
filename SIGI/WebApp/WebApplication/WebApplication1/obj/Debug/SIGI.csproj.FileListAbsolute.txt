@@ -579,3 +579,5 @@ D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\SIGI.dll
 D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\SIGI.pdb
 D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\WebApplication1.Migrations.inicial.resources
 D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\SIGI.csproj.GenerateResource.cache
+D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\WebApplication1.Migrations.alteracoes.resources
+D:\Repositorio\SIGI\WebApp\WebApplication\WebApplication1\obj\Debug\WebApplication1.Migrations.ajustandoImovel.resources

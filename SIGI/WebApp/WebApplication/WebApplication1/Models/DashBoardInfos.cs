@@ -12,5 +12,6 @@ namespace SIGI.Models
         public StatusConversaoAtendimento EstaSemana { get; set; }
 
         public List<PizzaFuncionarioInfo> ListaPizzaFuncionario { get; set; }
+        public List<PizzaFuncionarioInfo> ListaPizzaValor { get; set; }
     }
 }

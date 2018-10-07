@@ -20,7 +20,6 @@ namespace SIGI.Models.Pessoas
         public string InscricaoEstadual { get; set; }
         public string Cpf { get; set; }
         public string Rg{ get; set; }
-        public DateTime DataNascimento { get; set; }
         public string EmailPrincipal { get; set; }
         public string Observacao { get; set; }
         public int EnderecoID { get; set; }
